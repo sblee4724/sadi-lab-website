@@ -46,17 +46,17 @@
     }
   },
   "show": {
+    "publications": true,
+    "join": true,
+    "partners": false,
     "popup": true,
     "recruitBox": true,
-    "partners": true,
-    "research": true,
-    "publications": true,
-    "projects": true,
-    "team": true,
-    "news": true,
     "gallery": true,
-    "lecture": true,
-    "join": true
+    "news": true,
+    "projects": true,
+    "research": true,
+    "team": true,
+    "lecture": true
   },
   "popup": {
     "title": {
@@ -99,32 +99,32 @@
   "theme": {
     "default": "light",
     "light": {
-      "bg": "#F7F6F3",
-      "surface": "#FFFFFF",
-      "surface2": "#ECE9E3",
-      "line": "#E4E1DB",
-      "line2": "#CFCAC2",
-      "text": "#16130F",
-      "text2": "#57534E",
-      "text3": "#766F69",
-      "accent": "#2F5BD3",
       "area1": "#2F5BD3",
+      "bg": "#F7F6F3",
+      "text2": "#57534E",
+      "surface2": "#ECE9E3",
       "area2": "#0E9384",
-      "area3": "#D9601A"
+      "text3": "#766F69",
+      "area3": "#D9601A",
+      "accent": "#2F5BD3",
+      "surface": "#FFFFFF",
+      "text": "#16130F",
+      "line": "#E4E1DB",
+      "line2": "#CFCAC2"
     },
     "dark": {
-      "bg": "#0C0A09",
-      "surface": "#141210",
-      "surface2": "#1C1917",
-      "line": "#292524",
-      "line2": "#3A3532",
-      "text": "#FAFAF9",
-      "text2": "#A8A29E",
-      "text3": "#8A837E",
-      "accent": "#5B8CFF",
       "area1": "#5B8CFF",
+      "bg": "#0C0A09",
+      "text2": "#A8A29E",
+      "surface2": "#1C1917",
       "area2": "#2DD4BF",
-      "area3": "#FB923C"
+      "text3": "#8A837E",
+      "area3": "#FB923C",
+      "accent": "#5B8CFF",
+      "surface": "#141210",
+      "text": "#FAFAF9",
+      "line": "#292524",
+      "line2": "#3A3532"
     }
   },
   "fonts": {
