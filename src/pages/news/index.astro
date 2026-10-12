@@ -1,0 +1,36 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import T from '../../components/T.astro';
+import SubHero from '../../components/SubHero.astro';
+import data from '../../data/news.json';
+import { RV } from '../../lib/util';
+const CAT: Record<string, any> = { people: 'PEOPLE', paper: 'PAPER', award: 'AWARD', event: 'EVENT', recruit: { ko: '모집공고', en: 'RECRUIT' } };
+const items = [...data.items].sort((a, b) => (a.date < b.date ? 1 : -1));
+const years = [...new Set(items.map((n) => n.date.slice(0, 4)))];
+const fmt = (d: string) => d.replace(/-/g, '. ') + '.';
+---
+<Layout title="SADI Lab — News" active="news">
+  <SubHero title={{ ko: '연구실 소식', en: 'Lab news' }} lead={{ ko: 'SADI의 새 소식과 논문, 모집 공고를 전합니다.', en: 'News, papers and recruitment notices from SADI.' }} />
+  <section class="sec nt" style="padding:70px 0 120px">
+    <div class="wrap stack" style="gap:70px">
+      {years.map((y) => (
+        <div class="news-year">
+          <span class="y rv">{y}</span>
+          <div class="list" style="flex-grow:1;min-width:0">
+            {items.filter((n) => n.date.startsWith(y)).map((n, i) => (
+              <article class={`rw news-item ${RV[i % 4]}`}>
+                <span class="d">{fmt(n.date)}</span>
+                <div class="grow" style="gap:12px">
+                  <span class={`tag ${n.category === 'recruit' ? 'recruit' : ''}`} style="align-self:flex-start"><T v={CAT[n.category] ?? n.category.toUpperCase()} /></span>
+                  <span class="ti"><T v={n.title} /></span>
+                  <span class="su"><T v={n.summary} /></span>
+                </div>
+                {n.image && <div class="th"><img src={n.image} alt="" loading="lazy" /></div>}
+              </article>
+            ))}
+          </div>
+        </div>
+      ))}
+    </div>
+  </section>
+</Layout>

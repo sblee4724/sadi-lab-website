@@ -1,0 +1,36 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import T from '../../components/T.astro';
+import Recruit from '../../components/Recruit.astro';
+import data from '../../data/join.json';
+import settings from '../../data/settings.json';
+import { RV, pad2 } from '../../lib/util';
+const email = settings.contact.email;
+---
+<Layout title="SADI Lab — Join us" active="join">
+  <section class="subhero" style="height:620px">
+    <img src={data.image} alt="" class="bgimg kb" style="object-position:50% 40%;opacity:.4" />
+    <div class="shade"></div>
+    <div class="wrap" style="justify-content:center;padding-bottom:0">
+      <h1 class="h2a" style="font-weight:900;font-size:60px;line-height:1.25;max-width:900px"><T v={data.headline} /></h1>
+    </div>
+  </section>
+  <section class="sec nt">
+    <div class="wrap stack" style="gap:40px">
+      <h2 class="h2 m rv"><T v={{ ko: '이런 사람을 찾습니다', en: 'Who we are looking for' }} /></h2>
+      <div style="border-bottom:1px solid var(--ln)">
+        {data.qualities.map((q, i) => <div class={`q ${RV[i % 4]}`}><span class="n">{pad2(i + 1)}</span><div style="display:flex;flex-direction:column;gap:12px"><b><T v={q.title} /></b><span><T v={q.text} /></span></div></div>)}
+      </div>
+    </div>
+  </section>
+  <section class="sec">
+    <div class="wrap stack" style="gap:40px">
+      <div class="stack g22 rv">
+        <h2 class="h2 m"><T v={{ ko: '지원은 이메일로 받습니다', en: 'Apply by email' }} /></h2>
+        <p class="lead" style="font-size:17px"><T v={{ ko: `아래 서류를 ${email} 로 보내 주세요. 연구실 방문과 면담은 언제든 환영합니다.`, en: `Send the items below to ${email}. Lab visits and meetings are always welcome.` }} /></p>
+      </div>
+      <div class="two">{data.documents.map((d, i) => <div class={`doc ${RV[i % 4]}`}><span class="n">{pad2(i + 1)}</span><b><T v={d} /></b></div>)}</div>
+    </div>
+  </section>
+  <Recruit details={false} />
+</Layout>

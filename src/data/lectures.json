@@ -1,0 +1,38 @@
+{
+  "intro": {
+    "ko": "부산대학교 기계공학부에서 담당하고 있는 강의입니다.",
+    "en": "Courses taught at the School of Mechanical Engineering, Pusan National University."
+  },
+  "courses": [
+    {
+      "title": {
+        "ko": "동역학",
+        "en": "Dynamics"
+      },
+      "level": {
+        "ko": "학부",
+        "en": "Undergraduate"
+      },
+      "semester": "OOOOOOOOO",
+      "description": {
+        "ko": "뉴턴 역학을 바탕으로 질점과 강체의 운동을 해석합니다. 운동학, 힘과 가속도, 일과 에너지, 충격량과 운동량을 다룹니다.",
+        "en": "Motion of particles and rigid bodies based on Newtonian mechanics — kinematics, force and acceleration, work and energy, impulse and momentum."
+      }
+    },
+    {
+      "title": {
+        "ko": "유한요소법",
+        "en": "Finite Element Method"
+      },
+      "level": {
+        "ko": "학부 · 대학원",
+        "en": "Undergraduate · Graduate"
+      },
+      "semester": "OOOOOOOOO",
+      "description": {
+        "ko": "변분 원리와 약형식에서 출발해 유한요소를 정식화하고, 직접 코드로 구현해 구조 문제를 풉니다.",
+        "en": "From variational principles and weak forms to element formulation, with hands-on implementation for structural problems."
+      }
+    }
+  ]
+}

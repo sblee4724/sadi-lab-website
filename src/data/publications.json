@@ -1,0 +1,179 @@
+{
+  "journals": [
+    {
+      "kind": "international",
+      "area": "intel",
+      "year": 2026,
+      "authorsBefore": "",
+      "me": "Lee S",
+      "authorsAfter": ", Park S, Kim G",
+      "title": "Adaptive regularization for virtual sensing of structural deformation",
+      "journal": "Ocean Engineering",
+      "volume": "354 (2026) 125030",
+      "link": "",
+      "featured": true
+    },
+    {
+      "kind": "international",
+      "area": "comp",
+      "year": 2026,
+      "authorsBefore": "",
+      "me": "Lee S",
+      "authorsAfter": ", Park S",
+      "title": "The modal behavior of the layered shell element with interlayer slips",
+      "journal": "Steel and Composite Structures",
+      "volume": "60(1) (2026) 167–187",
+      "link": "",
+      "featured": false
+    },
+    {
+      "kind": "international",
+      "area": "intel",
+      "year": 2026,
+      "authorsBefore": "Shin MC, ",
+      "me": "Lee S",
+      "authorsAfter": ", Cho SP",
+      "title": "Full-field strain reconstruction of BWB aircraft structures using mode superposition-based virtual sensing",
+      "journal": "Structural Engineering and Mechanics",
+      "volume": "98(1) (2026) 77",
+      "link": "",
+      "featured": false
+    },
+    {
+      "kind": "international",
+      "area": "equip",
+      "year": 2026,
+      "authorsBefore": "Lee SG, ",
+      "me": "Lee S",
+      "authorsAfter": ", Lee PS",
+      "title": "TNT equivalency of MegaMEX and CONWEP-based modeling of fully vented internal explosions in nuclear facilities",
+      "journal": "Structural Engineering and Mechanics",
+      "volume": "97(3) (2026) 393",
+      "link": "",
+      "featured": false
+    },
+    {
+      "kind": "international",
+      "area": "intel",
+      "year": 2025,
+      "authorsBefore": "",
+      "me": "Lee S",
+      "authorsAfter": ", Lee PS",
+      "title": "Strain sensor placement method considering operational loads for virtual sensing of structural deformation",
+      "journal": "Computers & Structures",
+      "volume": "315 (2025) 107763",
+      "link": "",
+      "featured": true
+    },
+    {
+      "kind": "international",
+      "area": "intel",
+      "year": 2024,
+      "authorsBefore": "",
+      "me": "Lee S",
+      "authorsAfter": ", Park M, Oh M-H, Lee P-S",
+      "title": "Virtual sensing for real-time strain field estimation and its verification on a laboratory-scale jacket structure under water waves",
+      "journal": "Computers & Structures",
+      "volume": "298 (2024) 107344",
+      "link": "https://www.sciencedirect.com/science/article/abs/pii/S0045794924000737",
+      "featured": true
+    },
+    {
+      "kind": "international",
+      "area": "comp",
+      "year": 2024,
+      "authorsBefore": "Park M, ",
+      "me": "Lee S",
+      "authorsAfter": ", Kim K-T, Lee P-S",
+      "title": "Direct calculation of stress RAOs in hydroelastic analysis",
+      "journal": "Ocean Engineering",
+      "volume": "312 (2024) 118894",
+      "link": "https://www.sciencedirect.com/science/article/abs/pii/S0029801824022327",
+      "featured": false
+    },
+    {
+      "kind": "international",
+      "area": "comp",
+      "year": 2023,
+      "authorsBefore": "Noh D, Fazily P, Yu K, ",
+      "me": "Lee S",
+      "authorsAfter": ", Ko DK, Sung MJ, Huh H, Yoon JW",
+      "title": "Tungsten alloy impact fracture for frangible armor piercing",
+      "journal": "International Journal of Impact Engineering",
+      "volume": "180 (2023) 104681",
+      "link": "https://www.sciencedirect.com/science/article/abs/pii/S0734743X23001926",
+      "featured": false
+    },
+    {
+      "kind": "international",
+      "area": "comp",
+      "year": 2022,
+      "authorsBefore": "",
+      "me": "Lee S",
+      "authorsAfter": ", Yu K, Huh H, Kolman R, Arnoult X",
+      "title": "Dynamic hardening of AISI 304 steel at a wide range of strain rates and its application to shot peening simulation",
+      "journal": "Metals",
+      "volume": "12(3) (2022) 403",
+      "link": "https://doi.org/10.3390/met12030403",
+      "featured": false
+    },
+    {
+      "kind": "international",
+      "area": "comp",
+      "year": 2021,
+      "authorsBefore": "",
+      "me": "Lee S",
+      "authorsAfter": ", Huh H",
+      "title": "Shear stress hardening curves of AISI 4130 steel at ultra-high strain rates with Taylor impact tests",
+      "journal": "International Journal of Impact Engineering",
+      "volume": "149 (2021) 103789",
+      "link": "https://www.sciencedirect.com/science/article/abs/pii/S0734743X20308599",
+      "featured": false
+    },
+    {
+      "kind": "domestic",
+      "area": "comp",
+      "year": 2021,
+      "authorsBefore": "노동환, 유광현, ",
+      "me": "이승보",
+      "authorsAfter": ", 고동균, 성민제, 허훈, 윤정환",
+      "title": "Mohr–Coulomb 파단모델을 이용한 텅스텐 합금의 충격 파단 예측",
+      "journal": "소성가공학회지",
+      "volume": "30 (2021) 16–21",
+      "link": "",
+      "featured": false
+    }
+  ],
+  "conferences": [
+    {
+      "year": "2025",
+      "title": "Numerical evaluation of thermal behavior of freeze valve system for K-MSR",
+      "venue": "한국원자력학회 / Korean Nuclear Society"
+    },
+    {
+      "year": "2024",
+      "title": "모드 기반 실시간 변형 추정",
+      "venue": "한국전산구조공학회 / COSEIK"
+    },
+    {
+      "year": "2023",
+      "title": "Performance evaluation of three sensor placement methods",
+      "venue": "ASEM23"
+    },
+    {
+      "year": "2023",
+      "title": "적합직교분해 기저를 이용한 자켓 구조물의 변형",
+      "venue": "대한조선학회 / SNAK"
+    },
+    {
+      "year": "2022",
+      "title": "Automation of frequency domain decomposition for operational modal analysis using finite element model",
+      "venue": "Computational Structures Technology (CST)"
+    },
+    {
+      "year": "2018",
+      "title": "Prediction of shear properties at ultra-high strain rates",
+      "venue": "AEPA"
+    }
+  ]
+}

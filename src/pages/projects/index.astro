@@ -1,0 +1,44 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import T from '../../components/T.astro';
+import SubHero from '../../components/SubHero.astro';
+import data from '../../data/projects.json';
+import { RV } from '../../lib/util';
+const ongoing = data.projects.filter((p) => p.status === 'ongoing').length;
+const done = data.projects.length - ongoing;
+const granted = data.patents.filter((p) => p.status === 'granted').length;
+const filed = data.patents.length - granted;
+---
+<Layout title="SADI Lab — Projects" active="projects">
+  <SubHero title={{ ko: '연구 과제', en: 'Research projects' }} lead={{ ko: 'SADI가 수행하는 연구 과제와 지식재산권입니다.', en: 'Research projects and intellectual property of SADI Lab.' }} image="/images/equipment.webp" pos="60% 50%" />
+  <section class="sec nt" style="padding:80px 0">
+    <div class="wrap stack g30">
+      <div class="row-between rv"><h2 class="h2 s"><T v={{ ko: '연구 과제', en: 'Research projects' }} /></h2><span class="t2" style="font-size:15px"><T v={{ ko: `진행 중 ${ongoing} · 완료 ${done}`, en: `${ongoing} ongoing · ${done} completed` }} /></span></div>
+      <div class="list">
+        {data.projects.map((p, i) => (
+          <div class={`rw ${RV[i % 4]}`} style="align-items:center">
+            <span class="tag" style={p.status === 'ongoing' ? 'background:var(--ac);border-color:var(--ac);color:#fff;font-weight:700;width:88px;justify-content:center' : 'width:88px;justify-content:center'}><T v={p.status === 'ongoing' ? { ko: '진행 중', en: 'Ongoing' } : { ko: '완료', en: 'Completed' }} /></span>
+            <span class="mono t2" style="width:120px;flex-shrink:0;font-size:14px">{p.period}</span>
+            <div class="grow" style="gap:6px"><span style="font-size:18px;font-weight:700"><T v={p.title} /></span><span class="ko disp t3" style="font-size:14px">{p.title.en}</span></div>
+            <span class="t2" style="font-size:14px;text-align:right">{p.funder}</span>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+  <section class="sec" style="padding:90px 0 120px">
+    <div class="wrap stack g30">
+      <div class="row-between rv"><h2 class="h2 s"><T v={{ ko: '지식재산권', en: 'Intellectual property' }} /></h2><span class="t2" style="font-size:15px"><T v={{ ko: `특허등록 ${granted} · 출원 ${filed}`, en: `Granted ${granted} · Filed ${filed}` }} /></span></div>
+      <div class="list">
+        {data.patents.map((p) => (
+          <div class="rw" style="align-items:center;padding:22px 4px">
+            <span style="flex-grow:1;font-size:17px">{p.title}</span>
+            <span class="t2" style="width:70px;font-size:14px"><T v={p.status === 'granted' ? { ko: '등록', en: 'Granted' } : { ko: '출원', en: 'Filed' }} /></span>
+            <span class="mono t2" style="width:180px;font-size:13px">No. {p.number}</span>
+            <span class="mono t3" style="width:110px;text-align:right;font-size:13px">{p.date}</span>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+</Layout>

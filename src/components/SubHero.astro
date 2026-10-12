@@ -1,0 +1,12 @@
+---
+import T from './T.astro';
+const { title, lead, image, pos = '50% 50%' } = Astro.props;
+---
+<section class="subhero">
+  {image && <img src={image} alt="" class="bgimg kb" style={`object-position:${pos}`} />}
+  <div class="shade"></div>
+  <div class="wrap">
+    <h1 class="h2a"><T v={title} /></h1>
+    {lead && <p class="h3a"><T v={lead} /></p>}
+  </div>
+</section>

@@ -1,0 +1,63 @@
+{
+  "projects": [
+    {
+      "status": "ongoing",
+      "period": "2026–OOOOOOOOO",
+      "title": {
+        "ko": "OOOOOOOOO (과제명)",
+        "en": "OOOOOOOOO (Project title)"
+      },
+      "funder": "OOOOOOOOO · 주관/참여"
+    },
+    {
+      "status": "ongoing",
+      "period": "2026–OOOOOOOOO",
+      "title": {
+        "ko": "OOOOOOOOO (과제명)",
+        "en": "OOOOOOOOO (Project title)"
+      },
+      "funder": "OOOOOOOOO · 주관/참여"
+    },
+    {
+      "status": "ongoing",
+      "period": "2026–OOOOOOOOO",
+      "title": {
+        "ko": "OOOOOOOOO (과제명)",
+        "en": "OOOOOOOOO (Project title)"
+      },
+      "funder": "OOOOOOOOO"
+    },
+    {
+      "status": "done",
+      "period": "20OO–20OO",
+      "title": {
+        "ko": "OOOOOOOOO (과제명)",
+        "en": "OOOOOOOOO (Project title)"
+      },
+      "funder": "OOOOOOOOO"
+    },
+    {
+      "status": "done",
+      "period": "20OO–20OO",
+      "title": {
+        "ko": "OOOOOOOOO (과제명)",
+        "en": "OOOOOOOOO (Project title)"
+      },
+      "funder": "OOOOOOOOO"
+    }
+  ],
+  "patents": [
+    {
+      "title": "OOOOOOOOO (특허명)",
+      "status": "filed",
+      "number": "OOOOOOOOO",
+      "date": "20OO.OO.OO"
+    },
+    {
+      "title": "OOOOOOOOO (특허명)",
+      "status": "granted",
+      "number": "OOOOOOOOO",
+      "date": "20OO.OO.OO"
+    }
+  ]
+}

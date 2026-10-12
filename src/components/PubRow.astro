@@ -1,0 +1,21 @@
+---
+import T from './T.astro';
+import { AREA_COLOR, AREA_LABEL } from '../lib/util';
+const { p, cls = '', big = false, full = false } = Astro.props;
+const Tag = p.link ? 'a' : 'div';
+---
+<Tag href={p.link || undefined} target={p.link ? '_blank' : undefined} rel={p.link ? 'noopener' : undefined}
+  class={`rw pub ${big ? 'big' : ''} ${cls}`} data-area={p.area} data-year={String(p.year)}>
+  <span class="yr">{p.year}</span>
+  <div class="grow">
+    <span class="t">{p.title}</span>
+    <span class="a">{p.authorsBefore}<b>{p.me}</b>{p.authorsAfter}{!full && <> · <i>{p.journal}</i>, {p.volume}</>}</span>
+    {full && <span class="a"><i>{p.journal}</i>, {p.volume}</span>}
+  </div>
+  {full ? (
+    <div class="side">
+      <span class="tag" style={`border-color:${AREA_COLOR[p.area]};color:${AREA_COLOR[p.area]}`}><T v={AREA_LABEL[p.area]} /></span>
+      {p.link && <span class="chip">DOI ↗</span>}
+    </div>
+  ) : (p.link && <span class="ar t2" style="font-size:20px">↗</span>)}
+</Tag>

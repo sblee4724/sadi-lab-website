@@ -1,0 +1,32 @@
+---
+import TrussMark from './TrussMark.astro';
+import T from './T.astro';
+import { NAV, showJoin } from '../lib/nav';
+import settings from '../data/settings.json';
+const c = settings.contact;
+---
+<footer class="ftr">
+  <div class="wrap">
+    <div class="top">
+      <div class="l">
+        <div style="display:flex;align-items:center;gap:12px"><TrussMark size={48} /><span class="disp" style="font-weight:700;font-size:24px">{settings.lab.short}</span></div>
+        <span style="font-size:16px;font-weight:700"><T v={{ ko: '부산대학교 ' + settings.lab.name.ko, en: settings.lab.name.en }} /></span>
+        <span class="t2" style="font-size:14px;line-height:1.7"><T v={settings.lab.dept} /></span>
+        <div class="links">
+          {NAV.map((n) => <a href={n.href} class="nl"><T v={n.label} /></a>)}
+          {showJoin && <a href="/join/" class="nl"><T v={{ ko: '모집 안내', en: 'Join us' }} /></a>}
+        </div>
+      </div>
+      <div class="r">
+        <div><span class="k">ADDRESS</span><span style="line-height:1.6"><T v={c.address} /></span></div>
+        <div><span class="k">TEL</span><span><T v={c.tel} /></span></div>
+        <div><span class="k">EMAIL</span><a href={`mailto:${c.email}`} style="color:var(--tx);text-decoration:none">{c.email}</a></div>
+        <div style="gap:10px;padding-top:6px;flex-wrap:wrap">
+          <a class="btn ghost sm" href={c.googleMap} target="_blank" rel="noopener">Google Maps ↗</a>
+          <a class="btn ghost sm" href={c.naverMap} target="_blank" rel="noopener"><T v={{ ko: '네이버 지도', en: 'Naver Map' }} /> ↗</a>
+        </div>
+      </div>
+    </div>
+    <div class="bot"><span>© {new Date().getFullYear()} SADI Lab, <T v={settings.lab.univ} />. All rights reserved.</span></div>
+  </div>
+</footer>

@@ -1,0 +1,30 @@
+---
+import T from './T.astro';
+import settings from '../data/settings.json';
+import { showJoin } from '../lib/nav';
+const r = settings.recruit, c = settings.contact;
+const { details = true } = Astro.props;
+---
+<section class="sec alt">
+  <div class="wrap">
+    <div class="recruit">
+      <div class="l rv">
+        <h2 class="h2" style="font-size:48px"><T v={r.title} /></h2>
+        <p class="lead"><T v={r.body} /></p>
+      </div>
+      <div class="r rv2">
+        <button type="button" class="btn copy" data-copy={c.email} style="height:54px;padding:0 28px;border-radius:27px">
+          <span class="c1"><T v={{ ko: '이메일 주소 복사', en: 'Copy email address' }} /></span><span class="c2"><T v={{ ko: '복사했습니다 ✓', en: 'Copied ✓' }} /></span>
+        </button>
+        <span class="mono t2" style="font-size:14px">{c.email}</span>
+        <span class="t3" style="font-size:14px"><T v={c.room} /></span>
+        {details && showJoin && <a href="/join/" class="nl more"><T v={{ ko: '모집 안내 자세히 보기', en: 'Recruitment details' }} /> →</a>}
+      </div>
+    </div>
+  </div>
+</section>
+<style>
+  .copy .c2 { display: none; }
+  .copy:global(.done) .c1 { display: none; }
+  .copy:global(.done) .c2 { display: inline; }
+</style>

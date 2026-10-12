@@ -1,0 +1,6 @@
+---
+// <T v={{ko, en}} /> renders both languages; the language toggle shows one.
+import { bi } from '../lib/util';
+const { v } = Astro.props;
+---
+<Fragment set:html={bi(v)} />

@@ -1,0 +1,69 @@
+{
+  "items": [
+    {
+      "date": "2026-09-01",
+      "category": "people",
+      "title": {
+        "ko": "이승보 교수, 부산대학교 기계공학부 조교수 부임",
+        "en": "Prof. Sungbo Lee joins the School of Mechanical Engineering, Pusan National University"
+      },
+      "summary": {
+        "ko": "SADI Lab이 부산대학교에서 연구를 시작합니다.",
+        "en": "SADI Lab begins its research at Pusan National University."
+      },
+      "image": "/images/prof-sungbo-lee.jpg"
+    },
+    {
+      "date": "2026-09-02",
+      "category": "recruit",
+      "title": {
+        "ko": "2027학년도 전기 대학원생 모집",
+        "en": "Graduate student recruitment for Spring 2027"
+      },
+      "summary": {
+        "ko": "석사·박사과정, 박사후연구원 및 학부연구생을 모집합니다. 자격·지원 방법: OOOOOOOOO",
+        "en": "M.S./Ph.D. students, postdocs and undergraduate researchers wanted. Details: OOOOOOOOO"
+      },
+      "image": "/images/hero-dark.webp"
+    },
+    {
+      "date": "2026-03-01",
+      "category": "paper",
+      "title": {
+        "ko": "Ocean Engineering 논문 게재",
+        "en": "Paper published in Ocean Engineering"
+      },
+      "summary": {
+        "ko": "Adaptive regularization for virtual sensing of structural deformation",
+        "en": "Adaptive regularization for virtual sensing of structural deformation"
+      },
+      "image": "/images/news-bwb.webp"
+    },
+    {
+      "date": "2026-02-01",
+      "category": "paper",
+      "title": {
+        "ko": "Steel and Composite Structures 논문 게재",
+        "en": "Paper published in Steel and Composite Structures"
+      },
+      "summary": {
+        "ko": "The modal behavior of the layered shell element with interlayer slips",
+        "en": "The modal behavior of the layered shell element with interlayer slips"
+      },
+      "image": "/images/news-layer.webp"
+    },
+    {
+      "date": "2025-06-01",
+      "category": "paper",
+      "title": {
+        "ko": "Computers & Structures 논문 게재",
+        "en": "Paper published in Computers & Structures"
+      },
+      "summary": {
+        "ko": "Strain sensor placement method considering operational loads for virtual sensing of structural deformation",
+        "en": "Strain sensor placement method considering operational loads for virtual sensing of structural deformation"
+      },
+      "image": "/images/news-jacket.webp"
+    }
+  ]
+}

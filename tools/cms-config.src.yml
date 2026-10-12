@@ -1,0 +1,430 @@
+# SADI Lab admin (Decap CMS). Open https://<your-site>/admin/ and log in with GitHub.
+# Every save becomes a commit in the GitHub repo; Netlify rebuilds the site in about a minute.
+backend:
+  name: github
+  repo: sblee4724/sadi-lab-website
+  branch: main
+# For editing on your own computer: run `npx decap-server` next to `npm run dev`, then open http://localhost:4321/admin/
+local_backend: true
+locale: ko
+media_folder: public/images/uploads
+public_folder: /images/uploads
+site_url: /
+logo_url: /favicon.svg
+
+# ---- reusable field groups ----
+x-bi: &bi
+  widget: object
+  collapsed: false
+  fields:
+    - { label: "한국어", name: ko, widget: string }
+    - { label: "English", name: en, widget: string, required: false }
+x-bitext: &bitext
+  widget: object
+  collapsed: false
+  fields:
+    - { label: "한국어", name: ko, widget: text, hint: "줄바꿈은 그대로 반영됩니다. **굵게** 쓰면 강조됩니다." }
+    - { label: "English", name: en, widget: text, required: false }
+x-area: &area
+  label: "연구 분야"
+  name: area
+  widget: select
+  options:
+    - { label: "전산역학", value: comp }
+    - { label: "지능형구조", value: intel }
+    - { label: "첨단기기개발", value: equip }
+
+collections:
+  # ------------------------------------------------------------------ 소식
+  - name: news
+    label: "소식"
+    editor: { preview: false }
+    files:
+      - name: news
+        label: "소식 목록"
+        file: src/data/news.json
+        format: json
+        fields:
+          - label: "소식"
+            name: items
+            widget: list
+            summary: "{{fields.date}} · {{fields.title.ko}}"
+            fields:
+              - { label: "날짜", name: date, widget: datetime, format: "YYYY-MM-DD", date_format: "YYYY-MM-DD", time_format: false }
+              - label: "분류"
+                name: category
+                widget: select
+                options:
+                  - { label: "사람 (PEOPLE)", value: people }
+                  - { label: "논문 (PAPER)", value: paper }
+                  - { label: "수상 (AWARD)", value: award }
+                  - { label: "행사 (EVENT)", value: event }
+                  - { label: "모집공고 (RECRUIT)", value: recruit }
+              - { <<: *bi, label: "제목", name: title }
+              - { <<: *bitext, label: "요약", name: summary }
+              - { label: "이미지", name: image, widget: image, required: false }
+
+  # ------------------------------------------------------------------ 논문
+  - name: publications
+    label: "논문"
+    editor: { preview: false }
+    files:
+      - name: publications
+        label: "논문 · 학술대회"
+        file: src/data/publications.json
+        format: json
+        fields:
+          - label: "학술지 논문"
+            name: journals
+            widget: list
+            summary: "{{fields.year}} · {{fields.title}}"
+            fields:
+              - { label: "제목", name: title, widget: string }
+              - { label: "연도", name: year, widget: number, value_type: int }
+              - label: "구분"
+                name: kind
+                widget: select
+                options: [{ label: "국제", value: international }, { label: "국내", value: domestic }]
+              - *area
+              - { label: "앞 저자 (예: 'Park M, ')", name: authorsBefore, widget: string, required: false }
+              - { label: "본인 표기 (굵게)", name: me, widget: string, default: "Lee S" }
+              - { label: "뒤 저자 (예: ', Lee PS')", name: authorsAfter, widget: string, required: false }
+              - { label: "학술지", name: journal, widget: string }
+              - { label: "권(호) 연도 페이지", name: volume, widget: string }
+              - { label: "링크 (DOI 등)", name: link, widget: string, required: false }
+              - { label: "홈 화면 대표 논문", name: featured, widget: boolean, default: false }
+          - label: "학술대회 발표"
+            name: conferences
+            widget: list
+            summary: "{{fields.year}} · {{fields.title}}"
+            fields:
+              - { label: "연도", name: year, widget: string }
+              - { label: "제목", name: title, widget: string }
+              - { label: "학회", name: venue, widget: string }
+
+  # ------------------------------------------------------------------ 과제
+  - name: projects
+    label: "과제 · 특허"
+    editor: { preview: false }
+    files:
+      - name: projects
+        label: "과제 · 특허"
+        file: src/data/projects.json
+        format: json
+        fields:
+          - label: "연구 과제"
+            name: projects
+            widget: list
+            summary: "{{fields.period}} · {{fields.title.ko}}"
+            fields:
+              - label: "상태"
+                name: status
+                widget: select
+                options: [{ label: "진행 중", value: ongoing }, { label: "완료", value: done }]
+              - { label: "기간", name: period, widget: string }
+              - { <<: *bi, label: "과제명", name: title }
+              - { label: "지원기관 · 역할", name: funder, widget: string }
+          - label: "지식재산권"
+            name: patents
+            widget: list
+            summary: "{{fields.date}} · {{fields.title}}"
+            fields:
+              - { label: "명칭", name: title, widget: string }
+              - label: "상태"
+                name: status
+                widget: select
+                options: [{ label: "출원", value: filed }, { label: "등록", value: granted }]
+              - { label: "번호", name: number, widget: string }
+              - { label: "일자", name: date, widget: string }
+
+  # ------------------------------------------------------------------ 팀
+  - name: team
+    label: "팀"
+    editor: { preview: false }
+    files:
+      - name: team
+        label: "팀 구성"
+        file: src/data/team.json
+        format: json
+        fields:
+          - label: "지도교수"
+            name: pi
+            widget: object
+            fields:
+              - { <<: *bi, label: "이름", name: name }
+              - { label: "학위", name: degree, widget: string }
+              - { label: "사진", name: photo, widget: image }
+              - { <<: *bi, label: "직위", name: position }
+              - { <<: *bi, label: "한 줄 소개 (홈 화면)", name: short }
+              - label: "외부 링크"
+                name: links
+                widget: list
+                fields: [{ label: "이름", name: label, widget: string }, { label: "주소", name: url, widget: string }]
+              - label: "학력 및 경력"
+                name: career
+                widget: list
+                summary: "{{fields.period}} · {{fields.text.ko}}"
+                fields: [{ label: "기간", name: period, widget: string }, { <<: *bi, label: "내용", name: text }]
+              - label: "학술 활동 및 수상"
+                name: honors
+                widget: list
+                summary: "{{fields.period}} · {{fields.text.ko}}"
+                fields: [{ label: "기간", name: period, widget: string }, { <<: *bi, label: "내용", name: text }]
+          - label: "구성원"
+            name: members
+            widget: list
+            summary: "{{fields.name.ko}} · {{fields.role.ko}}"
+            fields:
+              - { <<: *bi, label: "이름", name: name }
+              - { <<: *bi, label: "과정 (예: 석사과정)", name: role }
+              - { <<: *area, label: "소속 그룹", name: group }
+              - { label: "이메일", name: email, widget: string, required: false }
+              - { label: "사진", name: photo, widget: image, required: false }
+          - label: "졸업생"
+            name: alumni
+            widget: list
+            summary: "{{fields.year}} · {{fields.name.ko}}"
+            fields:
+              - { label: "졸업 연도", name: year, widget: string }
+              - { <<: *bi, label: "이름", name: name }
+              - { <<: *bi, label: "학위", name: degree }
+              - { <<: *bi, label: "현재 소속", name: now }
+          - label: "홈 화면 모집 자리 (구성원이 없을 때 표시)"
+            name: openings
+            widget: list
+            fields: [{ label: "한국어", name: ko, widget: string }, { label: "English", name: en, widget: string }]
+
+  # ------------------------------------------------------------------ 갤러리 · 강의
+  - name: gallery
+    label: "갤러리"
+    editor: { preview: false }
+    files:
+      - name: gallery
+        label: "사진"
+        file: src/data/gallery.json
+        format: json
+        fields:
+          - label: "사진"
+            name: items
+            widget: list
+            summary: "{{fields.date}} · {{fields.caption.ko}}"
+            fields:
+              - { label: "사진", name: image, widget: image, required: false }
+              - { <<: *bi, label: "설명", name: caption }
+              - { label: "날짜", name: date, widget: string }
+  - name: lectures
+    label: "강의"
+    editor: { preview: false }
+    files:
+      - name: lectures
+        label: "강의 목록"
+        file: src/data/lectures.json
+        format: json
+        fields:
+          - { <<: *bi, label: "안내 문구", name: intro }
+          - label: "강의"
+            name: courses
+            widget: list
+            summary: "{{fields.title.ko}}"
+            fields:
+              - { <<: *bi, label: "강의명", name: title }
+              - { <<: *bi, label: "대상", name: level }
+              - { label: "개설 학기", name: semester, widget: string }
+              - { <<: *bitext, label: "소개", name: description }
+
+  # ------------------------------------------------------------------ 연구 · 모집
+  - name: research
+    label: "연구 분야"
+    editor: { preview: false }
+    files:
+      - name: research
+        label: "연구 페이지"
+        file: src/data/research.json
+        format: json
+        fields:
+          - label: "상단"
+            name: hero
+            widget: object
+            fields:
+              - { <<: *bitext, label: "제목", name: title }
+              - { <<: *bitext, label: "설명", name: lead }
+              - { label: "배경 이미지", name: image, widget: image }
+          - { <<: *bitext, label: "홈 화면 연구 섹션 제목", name: homeTitle }
+          - label: "연구 개요"
+            name: overview
+            widget: object
+            fields:
+              - { <<: *bi, label: "제목", name: title }
+              - { label: "문단", name: paragraphs, widget: list, fields: [{ label: "한국어", name: ko, widget: text }, { label: "English", name: en, widget: text }] }
+          - label: "연구 분야 (3개)"
+            name: areas
+            widget: list
+            allow_add: false
+            summary: "{{fields.num}} · {{fields.title.ko}}"
+            fields:
+              - { label: "키 (변경 금지)", name: key, widget: hidden }
+              - { label: "번호", name: num, widget: string }
+              - { <<: *bi, label: "분야명", name: title }
+              - { label: "영문 부제", name: sub, widget: string }
+              - { label: "이미지", name: image, widget: image }
+              - { label: "이미지 위치 (예: 50% 40%)", name: imagePos, widget: string }
+              - { <<: *bitext, label: "카드 설명 (홈 화면)", name: summary }
+              - { <<: *bi, label: "소제목", name: headline }
+              - { <<: *bitext, label: "소개", name: intro }
+              - label: "단계"
+                name: steps
+                widget: list
+                summary: "{{fields.title.ko}}"
+                fields: [{ <<: *bi, label: "단계명", name: title }, { <<: *bi, label: "설명", name: text }]
+              - label: "연구 활동"
+                name: activities
+                widget: list
+                summary: "{{fields.title.ko}}"
+                fields: [{ <<: *bi, label: "주제", name: title }, { label: "성과 (논문 등)", name: ref, widget: string }]
+          - label: "연구 방법"
+            name: methods
+            widget: list
+            fields:
+              - { <<: *bi, label: "제목", name: title }
+              - { label: "항목", name: items, widget: list, fields: [{ label: "분류", name: label, widget: string }, { label: "내용", name: value, widget: string }] }
+  - name: partners
+    label: "협력 기관"
+    editor: { preview: false }
+    files:
+      - name: partners
+        label: "협력 기관"
+        file: src/data/partners.json
+        format: json
+        fields:
+          - label: "홈 화면 로고 칸"
+            name: home
+            widget: list
+            fields: [{ label: "기관 약칭", name: name, widget: string }, { <<: *bi, label: "기관명", name: desc }]
+          - label: "연구 페이지 분류별 목록"
+            name: groups
+            widget: list
+            summary: "{{fields.title.ko}}"
+            fields:
+              - { <<: *bi, label: "분류", name: title }
+              - { label: "기관", name: items, widget: list, fields: [{ label: "한국어", name: ko, widget: string }, { label: "English", name: en, widget: string }] }
+  - name: join
+    label: "모집 안내"
+    editor: { preview: false }
+    files:
+      - name: join
+        label: "모집 안내 페이지"
+        file: src/data/join.json
+        format: json
+        fields:
+          - { <<: *bitext, label: "상단 문구", name: headline }
+          - { label: "배경 이미지", name: image, widget: image }
+          - label: "이런 사람을 찾습니다"
+            name: qualities
+            widget: list
+            fields: [{ <<: *bi, label: "제목", name: title }, { <<: *bitext, label: "설명", name: text }]
+          - label: "지원 서류"
+            name: documents
+            widget: list
+            fields: [{ label: "한국어", name: ko, widget: string }, { label: "English", name: en, widget: string }]
+
+  # ------------------------------------------------------------------ 사이트 설정
+  - name: settings
+    label: "⚙ 사이트 설정"
+    editor: { preview: false }
+    files:
+      - name: settings
+        label: "사이트 설정 (표시·디자인·연락처)"
+        file: src/data/settings.json
+        format: json
+        fields:
+          - label: "표시 설정 (on/off)"
+            name: show
+            widget: object
+            collapsed: false
+            fields:
+              - { label: "모집 팝업 (홈 화면)", name: popup, widget: boolean }
+              - { label: "'함께 연구할 사람' 모집 상자", name: recruitBox, widget: boolean }
+              - { label: "협력 기관", name: partners, widget: boolean }
+              - { label: "탭: 연구", name: research, widget: boolean }
+              - { label: "탭: 논문", name: publications, widget: boolean }
+              - { label: "탭: 과제", name: projects, widget: boolean }
+              - { label: "탭: 팀", name: team, widget: boolean }
+              - { label: "탭: 소식", name: news, widget: boolean }
+              - { label: "탭: 갤러리", name: gallery, widget: boolean }
+              - { label: "탭: 강의", name: lecture, widget: boolean }
+              - { label: "탭: 모집 안내", name: join, widget: boolean }
+          - label: "홈 화면 상단"
+            name: hero
+            widget: object
+            fields:
+              - { label: "배경 이미지 (밝은 테마)", name: imageLight, widget: image }
+              - { label: "배경 이미지 (어두운 테마)", name: imageDark, widget: image }
+              - { label: "이미지 위치 (예: 70% 50%)", name: position, widget: string }
+              - { <<: *bi, label: "윗줄 문구", name: eyebrow }
+              - { <<: *bitext, label: "소개 문단", name: lead }
+          - label: "모집 팝업 내용"
+            name: popup
+            widget: object
+            fields:
+              - { <<: *bi, label: "제목", name: title }
+              - { <<: *bitext, label: "본문", name: body }
+              - { label: "항목", name: points, widget: list, fields: [{ label: "한국어", name: ko, widget: text }, { label: "English", name: en, widget: text }] }
+              - { <<: *bi, label: "마무리 문장", name: closing }
+              - { <<: *bi, label: "서명", name: signature }
+          - label: "모집 상자 문구"
+            name: recruit
+            widget: object
+            fields: [{ <<: *bi, label: "제목", name: title }, { <<: *bitext, label: "본문", name: body }]
+          - label: "연락처"
+            name: contact
+            widget: object
+            fields:
+              - { label: "이메일", name: email, widget: string }
+              - { <<: *bi, label: "전화", name: tel }
+              - { <<: *bi, label: "호실", name: room }
+              - { <<: *bi, label: "주소", name: address }
+              - { label: "구글 지도 링크", name: googleMap, widget: string }
+              - { label: "네이버 지도 링크", name: naverMap, widget: string }
+          - label: "연구실 정보"
+            name: lab
+            widget: object
+            fields:
+              - { label: "약칭", name: short, widget: string }
+              - { <<: *bi, label: "연구실명", name: name }
+              - { label: "영문 정식 명칭", name: full, widget: string }
+              - { <<: *bi, label: "소속", name: dept }
+              - { <<: *bi, label: "대학", name: univ }
+          - label: "글꼴 (Google Fonts 이름)"
+            name: fonts
+            widget: object
+            fields:
+              - { label: "제목·영문 글꼴", name: display, widget: string, hint: "예: Space Grotesk, Inter, Montserrat" }
+              - { label: "본문 글꼴", name: body, widget: string, hint: "예: Noto Sans KR, Pretendard 계열은 Google Fonts에 없음" }
+              - { label: "숫자·코드 글꼴", name: mono, widget: string, hint: "예: JetBrains Mono, IBM Plex Mono" }
+          - label: "색상 테마"
+            name: theme
+            widget: object
+            fields:
+              - label: "기본 테마"
+                name: default
+                widget: select
+                options: [{ label: "밝은 테마", value: light }, { label: "어두운 테마", value: dark }]
+              - &palette
+                label: "밝은 테마 색상"
+                name: light
+                widget: object
+                collapsed: true
+                fields:
+                  - { label: "배경", name: bg, widget: color }
+                  - { label: "카드 배경", name: surface, widget: color }
+                  - { label: "보조 배경", name: surface2, widget: color }
+                  - { label: "구분선", name: line, widget: color }
+                  - { label: "구분선 (진하게)", name: line2, widget: color }
+                  - { label: "글자", name: text, widget: color }
+                  - { label: "보조 글자", name: text2, widget: color }
+                  - { label: "흐린 글자", name: text3, widget: color }
+                  - { label: "강조색", name: accent, widget: color }
+                  - { label: "분야1 색 (전산역학)", name: area1, widget: color }
+                  - { label: "분야2 색 (지능형구조)", name: area2, widget: color }
+                  - { label: "분야3 색 (첨단기기개발)", name: area3, widget: color }
+              - { <<: *palette, label: "어두운 테마 색상", name: dark }

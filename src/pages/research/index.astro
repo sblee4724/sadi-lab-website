@@ -1,0 +1,74 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import T from '../../components/T.astro';
+import SubHero from '../../components/SubHero.astro';
+import r from '../../data/research.json';
+import partners from '../../data/partners.json';
+import { RV, AREA_COLOR, pad2 } from '../../lib/util';
+import { on } from '../../lib/nav';
+const toc = [
+  ...r.areas.map((a, i) => ({ id: a.key, n: `02.${i + 1}`, c: AREA_COLOR[a.key], label: a.title })),
+  { id: 'methods', n: '02.4', c: 'var(--t3)', label: { ko: '연구 방법', en: 'Methods' } },
+  ...(on('partners') ? [{ id: 'partners', n: '02.5', c: 'var(--t3)', label: { ko: '협력 기관', en: 'Partners' } }] : []),
+];
+---
+<Layout title="SADI Lab — Research" active="research">
+  <SubHero title={r.hero.title} lead={r.hero.lead} image={r.hero.image} pos="50% 40%" />
+  <section class="sec nt">
+    <div class="wrap stack">
+      <h2 class="h2 l rv"><T v={r.overview.title} /></h2>
+      <div class="overview">
+        <div class="stack g22" style="flex:1 1 0">{r.overview.paragraphs.map((p, i) => <p class={`lead ${RV[i]}`}><T v={p} /></p>)}</div>
+        <nav class="toc rv2" aria-label="Research sections">
+          {toc.map((t) => <a href={`#${t.id}`}><span class="n" style={`color:${t.c}`}>{t.n}</span><span class="x"><T v={t.label} /></span><span class="ar t2">→</span></a>)}
+        </nav>
+      </div>
+    </div>
+  </section>
+
+  {r.areas.map((a: any, ai: number) => (
+    <section class="sec" id={a.key} style="scroll-margin-top:72px">
+      <div class="wrap stack">
+        <div class="banner rz">
+          <img src={a.image} alt="" style={`object-position:${a.imagePos}`} loading="lazy" />
+          <div class="shade"></div>
+          <div class="cap"><span class="mono" style={`font-size:14px;color:${AREA_COLOR[a.key]}`}>02.{ai + 1}</span><b><T v={a.title} /></b><span>{a.sub}</span></div>
+        </div>
+        <div class="stack g22"><h3 class="h3 rv"><T v={a.headline} /></h3><p class="lead w rv"><T v={a.intro} /></p></div>
+        <div class="steps" style={`grid-template-columns:repeat(${a.steps.length},minmax(0,1fr))`}>
+          {a.steps.map((s: any, i: number) => <div class={`step ${RV[i % 4]}`}><span class="n" style={`color:${AREA_COLOR[a.key]}`}>{pad2(i + 1)}</span><b><T v={s.title} /></b><span><T v={s.text} /></span></div>)}
+        </div>
+        {a.table && (
+          <div class="tbl-wrap rv"><table class="cmp">
+            <thead><tr>{a.table.head.map((c: any, i: number) => <th style={i === 2 ? `color:${AREA_COLOR[a.key]}` : ''}><T v={c} /></th>)}</tr></thead>
+            <tbody>{a.table.rows.map((row: any) => <tr>{row.map((c: any) => <td><T v={c} /></td>)}</tr>)}</tbody>
+          </table></div>
+        )}
+        <h3 class="h3 rv"><T v={{ ko: '연구 활동', en: 'Research activities' }} /></h3>
+        <div class="list">
+          {a.activities.map((x: any) => <div class="rw act"><span class="dot" style={`background:${AREA_COLOR[a.key]}`}></span><div class="grow" style="gap:6px"><b><T v={x.title} /></b><span>{x.ref}</span></div></div>)}
+        </div>
+      </div>
+    </section>
+  ))}
+
+  <section class="sec" id="methods" style="scroll-margin-top:72px">
+    <div class="wrap stack">
+      <h2 class="h2 m rv"><T v={{ ko: '연구 방법', en: 'Methods' }} /></h2>
+      <div class="two">
+        {r.methods.map((m) => <div class="mth rv"><b><T v={m.title} /></b>{m.items.map((it) => <div><span>{it.label}</span><span>{it.value}</span></div>)}</div>)}
+      </div>
+    </div>
+  </section>
+
+  {on('partners') && (
+    <section class="sec" id="partners" style="scroll-margin-top:72px">
+      <div class="wrap stack">
+        <h2 class="h2 m rv"><T v={{ ko: '협력 기관', en: 'Partner institutions' }} /></h2>
+        <div style="border-bottom:1px solid var(--ln)">
+          {partners.groups.map((g) => <div class="cat rv"><b><T v={g.title} /></b><div>{g.items.map((x) => <span><T v={x} /></span>)}</div></div>)}
+        </div>
+      </div>
+    </section>
+  )}
+</Layout>

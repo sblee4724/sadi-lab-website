@@ -1,0 +1,108 @@
+{
+  "home": [
+    {
+      "name": "KAIST",
+      "desc": {
+        "ko": "한국과학기술원",
+        "en": "Korea Advanced Institute of Science & Technology"
+      }
+    },
+    {
+      "name": "KAERI",
+      "desc": {
+        "ko": "한국원자력연구원",
+        "en": "Korea Atomic Energy Research Institute"
+      }
+    },
+    {
+      "name": "OOOOOOOOO",
+      "desc": {
+        "ko": "협력 기관",
+        "en": "Partner"
+      }
+    },
+    {
+      "name": "OOOOOOOOO",
+      "desc": {
+        "ko": "협력 기관",
+        "en": "Partner"
+      }
+    },
+    {
+      "name": "OOOOOOOOO",
+      "desc": {
+        "ko": "협력 기관",
+        "en": "Partner"
+      }
+    },
+    {
+      "name": "OOOOOOOOO",
+      "desc": {
+        "ko": "협력 기관",
+        "en": "Partner"
+      }
+    }
+  ],
+  "groups": [
+    {
+      "title": {
+        "ko": "연구기관",
+        "en": "Research institutes"
+      },
+      "items": [
+        {
+          "ko": "한국원자력연구원 (KAERI)",
+          "en": "Korea Atomic Energy Research Institute (KAERI)"
+        },
+        {
+          "ko": "OOOOOOOOO",
+          "en": "OOOOOOOOO"
+        }
+      ]
+    },
+    {
+      "title": {
+        "ko": "국내 대학",
+        "en": "Universities"
+      },
+      "items": [
+        {
+          "ko": "한국과학기술원 (KAIST)",
+          "en": "KAIST"
+        },
+        {
+          "ko": "OOOOOOOOO",
+          "en": "OOOOOOOOO"
+        }
+      ]
+    },
+    {
+      "title": {
+        "ko": "해외 대학",
+        "en": "International"
+      },
+      "items": [
+        {
+          "ko": "OOOOOOOOO",
+          "en": "OOOOOOOOO"
+        }
+      ]
+    },
+    {
+      "title": {
+        "ko": "산업체",
+        "en": "Industry"
+      },
+      "items": [
+        {
+          "ko": "OOOOOOOOO",
+          "en": "OOOOOOOOO"
+        },
+        {
+          "ko": "OOOOOOOOO",
+          "en": "OOOOOOOOO"
+        }
+      ]
+    }
+  ]
+}

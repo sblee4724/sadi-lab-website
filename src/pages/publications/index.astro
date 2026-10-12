@@ -1,0 +1,60 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import T from '../../components/T.astro';
+import SubHero from '../../components/SubHero.astro';
+import PubRow from '../../components/PubRow.astro';
+import data from '../../data/publications.json';
+import { AREA_LABEL } from '../../lib/util';
+const list = [...data.journals].sort((a, b) => b.year - a.year);
+const intl = list.filter((p) => p.kind === 'international').length;
+const years = [...new Set(list.map((p) => String(p.year)))];
+const areas = [['all', { ko: '전체', en: 'All' }], ['comp', AREA_LABEL.comp], ['intel', AREA_LABEL.intel], ['equip', AREA_LABEL.equip]] as const;
+const count = (k: string) => list.filter((p) => k === 'all' || p.area === k).length;
+---
+<Layout title="SADI Lab — Publications" active="publications">
+  <SubHero title={{ ko: '학술 논문', en: 'Journal papers' }}
+    lead={{ ko: `국제 학술지에 ${intl}편의 논문을 게재했습니다. 연구 분야와 연도로 찾아볼 수 있습니다.`, en: `${intl} papers in international journals — browse by research area and year.` }}
+    image="/images/research-overview.webp" pos="70% 50%" />
+  <section class="sec nt" style="padding:70px 0 90px">
+    <div class="wrap stack g26">
+      <div class="filters rv">
+        <div class="fbtns" role="group" aria-label="Research area">
+          {areas.map(([k, lab]) => <button type="button" class="fb" data-area={k} aria-pressed={k === 'all' ? 'true' : 'false'}><T v={lab} /><small data-n={k}>{count(k)}</small></button>)}
+        </div>
+        <label class="t2" style="display:flex;align-items:center;gap:10px;font-size:14px"><T v={{ ko: '연도', en: 'Year' }} />
+          <select class="yr" id="yearSel"><option value="all">전체 연도 · All years</option>{years.map((y) => <option value={y}>{y}</option>)}</select>
+        </label>
+      </div>
+      <div class="t2" style="display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;font-size:14px">
+        <span><span class="ko">총 <b id="cntKo">{list.length}</b>편</span><span class="en"><b id="cntEn">{list.length}</b> papers</span></span>
+        <span><b style="color:var(--tx)">Lee S</b> = <T v={{ ko: '이승보 교수', en: 'Prof. Sungbo Lee' }} /></span>
+      </div>
+      <div class="list" id="pubList">{list.map((p) => <PubRow p={p} full />)}</div>
+      <p id="pubNone" class="t2" style="display:none;margin:0;padding:30px 0;font-size:15px"><T v={{ ko: '선택한 조건에 해당하는 논문이 없습니다.', en: 'No papers match the selected filters.' }} /></p>
+    </div>
+  </section>
+  <section class="sec" style="padding:90px 0 120px">
+    <div class="wrap stack g36">
+      <h2 class="h2 s rv"><T v={{ ko: '학술대회 발표', en: 'Conference presentations' }} /></h2>
+      <div class="list">{data.conferences.map((c) => <div class="rw" style="padding:18px 4px"><span class="yr">{c.year}</span><span style="flex-grow:1;font-size:16px">{c.title}</span><span class="t2" style="font-size:14px">{c.venue}</span></div>)}</div>
+    </div>
+  </section>
+  <script is:inline>
+    (function () {
+      var area = 'all', year = 'all';
+      var rows = [].slice.call(document.querySelectorAll('#pubList [data-area]'));
+      function apply() {
+        var n = 0;
+        rows.forEach(function (r) { var ok = (area === 'all' || r.dataset.area === area) && (year === 'all' || r.dataset.year === year); r.style.display = ok ? '' : 'none'; if (ok) n++; });
+        document.getElementById('cntKo').textContent = n; document.getElementById('cntEn').textContent = n;
+        document.getElementById('pubNone').style.display = n ? 'none' : 'block';
+        document.querySelectorAll('.fb').forEach(function (b) {
+          b.setAttribute('aria-pressed', String(b.dataset.area === area));
+          var k = b.dataset.area; b.querySelector('small').textContent = rows.filter(function (r) { return (k === 'all' || r.dataset.area === k) && (year === 'all' || r.dataset.year === year); }).length;
+        });
+      }
+      document.querySelectorAll('.fb').forEach(function (b) { b.addEventListener('click', function () { area = b.dataset.area; apply(); }); });
+      document.getElementById('yearSel').addEventListener('change', function (e) { year = e.target.value; apply(); });
+    })();
+  </script>
+</Layout>

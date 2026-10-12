@@ -1,0 +1,104 @@
+---
+import Layout from '../layouts/Layout.astro';
+import T from '../components/T.astro';
+import TrussMark from '../components/TrussMark.astro';
+import Recruit from '../components/Recruit.astro';
+import PubRow from '../components/PubRow.astro';
+import settings from '../data/settings.json';
+import research from '../data/research.json';
+import pubs from '../data/publications.json';
+import team from '../data/team.json';
+import partners from '../data/partners.json';
+import { RV, AREA_COLOR } from '../lib/util';
+import { on } from '../lib/nav';
+const h = settings.hero;
+const featured = pubs.journals.filter((p) => p.featured).slice(0, 3);
+const pi = team.pi;
+---
+<Layout title="SADI Lab — Pusan National University" active="home">
+  <section class="hero">
+    <img src={h.imageLight} alt="" class="bgimg kb only-light" style={`object-position:${h.position}`} />
+    <img src={h.imageDark} alt="" class="bgimg kb only-dark" style={`object-position:${h.position}`} />
+    <div class="shade"></div>
+    <div class="wrap">
+      <span class="eyebrow h1a"><T v={h.eyebrow} /></span>
+      <h1 class="h2a">
+        <span class="wordmark" aria-hidden="true"><span class="sadi">S<span class="amark"><TrussMark size={182} /></span>DI</span><span>Lab</span></span>
+        <span class="sr-only">SADI Lab</span>
+        <span class="full"><em>S</em>tructural <em>A</em>nalysis, <em>D</em>esign &amp; <em>I</em>ntelligence Laboratory</span>
+        <span class="kr">{settings.lab.name.ko}</span>
+      </h1>
+      <p class="h3a"><T v={h.lead} /></p>
+      <div class="cta h4a">
+        {on('research') && <a class="btn" href="/research/"><T v={{ ko: '연구 분야 보기', en: 'Explore research' }} /></a>}
+        {on('join') && <a class="btn ghost" href="/join/"><T v={{ ko: '모집 안내', en: 'Join us' }} /></a>}
+      </div>
+    </div>
+    <div class="bob"><svg width="16" height="24" viewBox="0 0 16 24" aria-hidden="true"><path d="M8 2 V21 M2 15 L8 21 L14 15" fill="none" stroke="currentColor" stroke-width="1.5"></path></svg></div>
+  </section>
+
+  <section class="sec nt">
+    <div class="wrap stack">
+      <h2 class="h2 l rv"><T v={research.homeTitle} /></h2>
+      <div class="cards3">
+        {research.areas.map((a, i) => (
+          <a href={on('research') ? `/research/#${a.key}` : '#'} class={`card acard ${RV[i]}`}>
+            <div class="img"><img src={a.image} alt="" class="zi" style={`object-position:${a.imagePos}`} loading="lazy" /></div>
+            <div class="body">
+              <span class="num" style={`color:${AREA_COLOR[a.key]}`}>{a.num}</span>
+              <span class="ttl"><T v={a.title} /></span>
+              <span class="sub">{a.sub}</span>
+              <p><T v={a.summary} /></p>
+              <span class="go"><T v={{ ko: '자세히', en: 'Learn more' }} /> <span class="ar">→</span></span>
+            </div>
+          </a>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  {on('publications') && (
+    <section class="sec">
+      <div class="wrap stack">
+        <div class="row-between rv"><h2 class="h2"><T v={{ ko: '대표 논문', en: 'Featured papers' }} /></h2><a href="/publications/" class="nl more"><T v={{ ko: '논문 전체 보기', en: 'All publications' }} /> →</a></div>
+        <div class="list">{featured.map((p, i) => <PubRow p={p} cls={RV[i]} big />)}</div>
+      </div>
+    </section>
+  )}
+
+  {on('team') && (
+    <section class="sec">
+      <div class="wrap stack">
+        <div class="row-between rv"><h2 class="h2"><T v={{ ko: 'SADI 팀', en: 'The SADI team' }} /></h2><a href="/team/" class="nl more"><T v={{ ko: '팀 전체 보기', en: 'Full team' }} /> →</a></div>
+        <a href="/team/" class="pi card rv">
+          <div class="ph"><img src={pi.photo} alt="Prof. Sungbo Lee" class="zi" /></div>
+          <div style="display:flex;flex-direction:column;gap:12px">
+            <span class="role"><T v={{ ko: '지도교수', en: 'Principal Investigator' }} /></span>
+            <span class="nm"><T v={pi.name} /> <small><span class="ko">{pi.name.en}, </span>{pi.degree}</small></span>
+            <span class="t2" style="font-size:16px"><T v={pi.position} /></span>
+            <span class="t3" style="font-size:14px;line-height:1.7"><T v={pi.short} /></span>
+            <span style="padding-top:6px;font-size:14px;font-weight:500"><T v={{ ko: '프로필 보기', en: 'View profile' }} /> <span class="ar">→</span></span>
+          </div>
+        </a>
+        <div class="grid4">
+          {team.members.length
+            ? team.members.slice(0, 4).map((m: any, i: number) => (
+                <div class={RV[i % 4]} style="display:flex;flex-direction:column;gap:12px"><div class="photo-ph">{m.photo ? <img src={m.photo} alt="" /> : 'PHOTO'}</div><span style="font-size:17px;font-weight:700"><T v={m.name} /></span><span class="t2" style="font-size:14px"><T v={m.role} /></span></div>))
+            : team.openings.map((o, i) => (
+                <div class={RV[i % 4]} style="display:flex;flex-direction:column;gap:12px"><div class="photo-ph">PHOTO</div><span style="font-size:17px;font-weight:700">OOOOOOOOO</span><span class="t2" style="font-size:14px"><T v={o} /></span></div>))}
+        </div>
+      </div>
+    </section>
+  )}
+
+  {on('partners') && (
+    <section class="sec" style="padding:110px 0">
+      <div class="wrap stack">
+        <h2 class="h2 rv"><T v={{ ko: '협력 기관', en: 'Partner institutions' }} /></h2>
+        <div class="grid6">{partners.home.map((p) => <div class="logo-box rz"><b>{p.name}</b><span><T v={p.desc} /></span></div>)}</div>
+      </div>
+    </section>
+  )}
+
+  {on('recruitBox') && <Recruit />}
+</Layout>

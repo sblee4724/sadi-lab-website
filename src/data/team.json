@@ -1,0 +1,105 @@
+{
+  "pi": {
+    "name": {
+      "ko": "이승보",
+      "en": "Sungbo Lee"
+    },
+    "degree": "Ph.D.",
+    "photo": "/images/prof-sungbo-lee.jpg",
+    "position": {
+      "ko": "부산대학교 기계공학부 조교수",
+      "en": "Assistant Professor, School of Mechanical Engineering, Pusan National University"
+    },
+    "short": {
+      "ko": "前 한국원자력연구원 선임연구원 · KAIST 기계공학 박사",
+      "en": "Former Senior Researcher, KAERI · Ph.D., Mechanical Engineering, KAIST"
+    },
+    "links": [
+      {
+        "label": "Google Scholar",
+        "url": "#"
+      },
+      {
+        "label": "ORCID",
+        "url": "#"
+      },
+      {
+        "label": "ResearchGate",
+        "url": "#"
+      }
+    ],
+    "career": [
+      {
+        "period": "2026.09 –",
+        "text": {
+          "ko": "부산대학교 기계공학부 조교수",
+          "en": "Assistant Professor, School of Mechanical Engineering, Pusan National University"
+        }
+      },
+      {
+        "period": "2024.08 – 2026.08",
+        "text": {
+          "ko": "한국원자력연구원 선임연구원 (차세대원자로기술개발부)",
+          "en": "Senior Researcher, KAERI (Gen-IV Reactor Technology Development Division)"
+        }
+      },
+      {
+        "period": "2019 – 2024",
+        "text": {
+          "ko": "KAIST 기계공학 박사",
+          "en": "Ph.D., Mechanical Engineering, KAIST"
+        }
+      },
+      {
+        "period": "2017 – 2019",
+        "text": {
+          "ko": "KAIST 기계공학 석사",
+          "en": "M.S., Mechanical Engineering, KAIST"
+        }
+      },
+      {
+        "period": "2011 – 2017",
+        "text": {
+          "ko": "부산대학교 기계공학부 학사",
+          "en": "B.S., Mechanical Engineering, Pusan National University"
+        }
+      }
+    ],
+    "honors": [
+      {
+        "period": "2011 – 2016",
+        "text": {
+          "ko": "대통령과학장학금",
+          "en": "Presidential Science Scholarship"
+        }
+      },
+      {
+        "period": "OOOOOOOOO",
+        "text": {
+          "ko": "OOOOOOOOO",
+          "en": "OOOOOOOOO"
+        }
+      }
+    ]
+  },
+  "members": [],
+  "alumni": [],
+  "openings": [
+    {
+      "ko": "박사과정 · 모집 중",
+      "en": "Ph.D. student · open"
+    },
+    {
+      "ko": "석사과정 · 모집 중",
+      "en": "M.S. student · open"
+    },
+    {
+      "ko": "박사후연구원 · 모집 중",
+      "en": "Postdoc · open"
+    },
+    {
+      "ko": "학부연구생 · 모집 중",
+      "en": "Undergraduate · open"
+    }
+  ]
+}

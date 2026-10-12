@@ -1,0 +1,22 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import T from '../../components/T.astro';
+import SubHero from '../../components/SubHero.astro';
+import data from '../../data/gallery.json';
+import { RV } from '../../lib/util';
+---
+<Layout title="SADI Lab — Gallery" active="gallery">
+  <SubHero title={{ ko: '연구실 일상', en: 'Life at SADI' }} lead={{ ko: '학회, 실험, 함께한 순간들을 기록합니다.', en: 'Conferences, experiments and moments together.' }} />
+  <section class="sec nt" style="padding:70px 0 120px">
+    <div class="wrap">
+      <div class="grid3" style="row-gap:44px">
+        {data.items.map((g, i) => (
+          <figure class={RV[i % 3]} style="margin:0;display:flex;flex-direction:column;gap:14px">
+            <div class="photo-ph" style="height:280px;border-radius:18px">{g.image ? <img src={g.image} alt="" loading="lazy" /> : 'PHOTO'}</div>
+            <figcaption style="display:flex;flex-direction:column;gap:6px"><b style="font-size:16px"><T v={g.caption} /></b><span class="mono t3" style="font-size:13px">{g.date}</span></figcaption>
+          </figure>
+        ))}
+      </div>
+    </div>
+  </section>
+</Layout>

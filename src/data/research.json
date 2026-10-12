@@ -1,0 +1,448 @@
+{
+  "hero": {
+    "title": {
+      "ko": "구조의 전 생애를\n계산으로 다룹니다",
+      "en": "Handling the whole life of a structure\nby computation"
+    },
+    "lead": {
+      "ko": "해석으로 거동을 예측하고, 계측과 모델로 현재 상태를 읽어내며, 그 이해를 새로운 기기 설계로 연결합니다.",
+      "en": "We predict behavior by analysis, read the present state with measurements and models, and carry that understanding into new equipment design."
+    },
+    "image": "/images/research-overview.webp"
+  },
+  "homeTitle": {
+    "ko": "구조물을 계산하고, 읽어내고, 만들어내는\n모든 과정을 연구합니다",
+    "en": "We study every step — computing, reading\nand building structures"
+  },
+  "overview": {
+    "title": {
+      "ko": "구조물은 말하지 않습니다",
+      "en": "Structures do not speak"
+    },
+    "paragraphs": [
+      {
+        "ko": "원자로 기기, 해양 구조물, 항공기처럼 극한 조건에서 운용되는 구조물은 내부의 응력과 손상을 직접 보여 주지 않습니다. 센서를 붙일 수 있는 위치는 제한되고, 설계 단계의 해석은 실제 운용 조건과 어긋나기 쉽습니다.",
+        "en": "Structures operating in extreme conditions — reactor components, offshore structures, aircraft — do not reveal their internal stress and damage. Sensor locations are limited, and design-stage analysis easily drifts from real operating conditions."
+      },
+      {
+        "ko": "SADI는 이 간극을 계산으로 메웁니다. 정확한 전산해석으로 거동을 예측하고, 소수의 계측으로 구조 전체의 상태를 추정하며, 그 결과를 더 안전한 첨단기기 설계로 되돌립니다.",
+        "en": "SADI closes this gap by computation: we predict behavior with accurate analysis, estimate the whole structural state from a few measurements, and feed the results back into safer advanced equipment design."
+      }
+    ]
+  },
+  "areas": [
+    {
+      "key": "comp",
+      "num": "01",
+      "title": {
+        "ko": "전산역학",
+        "en": "Computational Mechanics"
+      },
+      "sub": "Finite Elements & Multiphysics",
+      "image": "/images/area1-shell.webp",
+      "imagePos": "50% 40%",
+      "summary": {
+        "ko": "유한요소 정식화와 멀티피직스 연성해석으로 구조·열·충격 거동을 정확하고 빠르게 예측합니다.",
+        "en": "We predict structural, thermal and impact behavior accurately and fast with finite element formulations and coupled multiphysics analysis."
+      },
+      "headline": {
+        "ko": "정확하고, 빠르고, 믿을 수 있는 해석",
+        "en": "Accurate, fast and trustworthy analysis"
+      },
+      "intro": {
+        "ko": "복잡한 형상과 비선형 재료, 열·유동·충격이 얽힌 문제에서 해석의 신뢰도는 요소 정식화와 모델링 선택에 달려 있습니다.\nSADI는 새로운 유한요소를 개발하고, 연성해석과 축소모델로 해석의 정확도와 속도를 함께 끌어올립니다.",
+        "en": "For complex geometries, nonlinear materials and coupled thermal, flow and impact problems, the reliability of analysis depends on element formulation and modeling choices.\nSADI develops new finite elements and raises both accuracy and speed with coupled analysis and reduced-order models."
+      },
+      "steps": [
+        {
+          "title": {
+            "ko": "물리 모델링",
+            "en": "Physics modeling"
+          },
+          "text": {
+            "ko": "구조·열·유동·재료 거동을 지배방정식으로 정식화합니다.",
+            "en": "Formulate structural, thermal, flow and material behavior as governing equations."
+          }
+        },
+        {
+          "title": {
+            "ko": "요소 정식화",
+            "en": "Element formulation"
+          },
+          "text": {
+            "ko": "다각형·적층 쉘 등 새로운 유한요소로 이산화합니다.",
+            "en": "Discretize with new elements such as polygonal and layered shell elements."
+          }
+        },
+        {
+          "title": {
+            "ko": "연성 해석",
+            "en": "Coupled solution"
+          },
+          "text": {
+            "ko": "열-구조, 유체-구조, 충격 해석을 수행합니다.",
+            "en": "Solve thermo-mechanical, fluid–structure and impact problems."
+          }
+        },
+        {
+          "title": {
+            "ko": "검증·축소",
+            "en": "Validation & ROM"
+          },
+          "text": {
+            "ko": "실험과 비교하고 축소모델로 빠르게 만듭니다.",
+            "en": "Validate against experiments and accelerate with reduced-order models."
+          }
+        }
+      ],
+      "activities": [
+        {
+          "title": {
+            "ko": "다각형 유한요소와 기하 비선형 해석",
+            "en": "Polygonal finite elements for geometric nonlinearity"
+          },
+          "ref": "Strain-smoothed polygonal element · Computers & Structures (in preparation)"
+        },
+        {
+          "title": {
+            "ko": "미끄럼이 있는 적층 쉘 요소의 동적 거동",
+            "en": "Layered shell elements with interlayer slip"
+          },
+          "ref": "Steel and Composite Structures 60(1) (2026)"
+        },
+        {
+          "title": {
+            "ko": "유탄성 해석에서 응력 RAO 직접 계산",
+            "en": "Direct stress RAOs in hydroelastic analysis"
+          },
+          "ref": "Ocean Engineering 312 (2024)"
+        },
+        {
+          "title": {
+            "ko": "초고변형률속도 재료 모델과 충격 해석",
+            "en": "High strain-rate material models and impact analysis"
+          },
+          "ref": "Int. J. Impact Engineering 149 (2021), 180 (2023) · Metals 12(3) (2022)"
+        }
+      ]
+    },
+    {
+      "key": "intel",
+      "num": "02",
+      "title": {
+        "ko": "지능형구조",
+        "en": "Intelligent Structures"
+      },
+      "sub": "Virtual Sensing & Digital Twin",
+      "image": "/images/area2-virtual-sensing.webp",
+      "imagePos": "72% 50%",
+      "summary": {
+        "ko": "소수의 센서와 계산모델을 결합한 가상측정으로 구조물 전체의 변형과 상태를 실시간으로 추정합니다.",
+        "en": "We estimate the full-field deformation and state of structures in real time by fusing a few sensors with computational models."
+      },
+      "headline": {
+        "ko": "소수의 센서로 구조 전체를 읽어내다",
+        "en": "Reading a whole structure from a few sensors"
+      },
+      "intro": {
+        "ko": "실제 구조물에는 몇 개의 센서만 붙일 수 있지만, 안전 판단에 필요한 것은 구조 전체의 변형과 응력입니다.\n가상측정은 계측 신호와 계산모델의 모드 정보를 결합해 센서가 없는 위치까지 응답을 실시간으로 재구성합니다.",
+        "en": "Only a few sensors can be installed on a real structure, yet safety decisions need the full-field deformation and stress.\nVirtual sensing fuses measured signals with modal information from the computational model to reconstruct responses in real time — even where there are no sensors."
+      },
+      "steps": [
+        {
+          "title": {
+            "ko": "희소 계측",
+            "en": "Sparse measurement"
+          },
+          "text": {
+            "ko": "가속도·변형률 등 소수의 센서 신호를 받습니다.",
+            "en": "Acquire a few acceleration and strain signals."
+          }
+        },
+        {
+          "title": {
+            "ko": "모델 기반 추론",
+            "en": "Model-based inference"
+          },
+          "text": {
+            "ko": "모드 중첩과 정규화로 전체 응답을 추정합니다.",
+            "en": "Estimate the full response by mode superposition and regularization."
+          }
+        },
+        {
+          "title": {
+            "ko": "상태 재구성",
+            "en": "State reconstruction"
+          },
+          "text": {
+            "ko": "변형·응력장과 손상 지표, 잔여수명을 산출합니다.",
+            "en": "Produce deformation and stress fields, damage indicators and remaining life."
+          }
+        }
+      ],
+      "table": {
+        "head": [
+          {
+            "ko": "항목",
+            "en": "Item"
+          },
+          {
+            "ko": "기존 계측",
+            "en": "Conventional sensing"
+          },
+          {
+            "ko": "가상측정",
+            "en": "Virtual sensing"
+          }
+        ],
+        "rows": [
+          [
+            {
+              "ko": "측정 범위",
+              "en": "Coverage"
+            },
+            {
+              "ko": "센서 위치의 점 정보",
+              "en": "Point values at sensors"
+            },
+            {
+              "ko": "구조 전체의 연속 필드",
+              "en": "Continuous full field"
+            }
+          ],
+          [
+            {
+              "ko": "필요 센서 수",
+              "en": "Sensors needed"
+            },
+            {
+              "ko": "많음",
+              "en": "Many"
+            },
+            {
+              "ko": "소수 (최적 배치)",
+              "en": "Few (optimally placed)"
+            }
+          ],
+          [
+            {
+              "ko": "접근 불가 부위",
+              "en": "Inaccessible regions"
+            },
+            {
+              "ko": "측정 불가",
+              "en": "Not measurable"
+            },
+            {
+              "ko": "모델로 추정",
+              "en": "Estimated by model"
+            }
+          ],
+          [
+            {
+              "ko": "실시간성",
+              "en": "Real time"
+            },
+            {
+              "ko": "가능",
+              "en": "Yes"
+            },
+            {
+              "ko": "가능 (경량 연산)",
+              "en": "Yes (lightweight)"
+            }
+          ],
+          [
+            {
+              "ko": "디지털 트윈 연계",
+              "en": "Digital-twin link"
+            },
+            {
+              "ko": "제한적",
+              "en": "Limited"
+            },
+            {
+              "ko": "직접 연계",
+              "en": "Direct"
+            }
+          ]
+        ]
+      },
+      "activities": [
+        {
+          "title": {
+            "ko": "실험 규모 자켓 구조물의 실시간 변형률장 추정",
+            "en": "Real-time strain-field estimation on a lab-scale jacket"
+          },
+          "ref": "Computers & Structures 298 (2024)"
+        },
+        {
+          "title": {
+            "ko": "운용하중을 고려한 변형률 센서 배치",
+            "en": "Strain sensor placement under operational loads"
+          },
+          "ref": "Computers & Structures 315 (2025)"
+        },
+        {
+          "title": {
+            "ko": "가상측정을 위한 적응형 정규화",
+            "en": "Adaptive regularization for virtual sensing"
+          },
+          "ref": "Ocean Engineering 354 (2026)"
+        },
+        {
+          "title": {
+            "ko": "BWB 항공기 구조의 전역 변형률 재구성",
+            "en": "Full-field strain reconstruction of BWB aircraft"
+          },
+          "ref": "Structural Engineering and Mechanics 98(1) (2026)"
+        }
+      ]
+    },
+    {
+      "key": "equip",
+      "num": "03",
+      "title": {
+        "ko": "첨단기기개발",
+        "en": "Advanced Equipment Development"
+      },
+      "sub": "Design & Integrity for Extreme Environments",
+      "image": "/images/area3-equipment.webp",
+      "imagePos": "50% 45%",
+      "summary": {
+        "ko": "원자로·고온·극한환경 기기의 설계와 건전성 평가로 차세대 첨단기기를 개발합니다.",
+        "en": "We develop next-generation equipment through design and integrity assessment for reactor, high-temperature and extreme environments."
+      },
+      "headline": {
+        "ko": "극한환경에서도 견디는 기기를 설계하다",
+        "en": "Designing equipment that endures extreme environments"
+      },
+      "intro": {
+        "ko": "소형모듈원자로(SMR)와 같은 차세대 원자로와 에너지 시스템의 기기는 고온, 부식성 용융염을 견뎌야 합니다.\nSADI는 해석과 건전성 평가를 설계 단계에 통합해 새로운 기기를 개발합니다.",
+        "en": "Equipment for next-generation reactors and energy systems such as small modular reactors (SMR) must withstand high temperatures and corrosive molten salts.\nSADI integrates analysis and integrity assessment into the design stage to develop new equipment."
+      },
+      "steps": [
+        {
+          "title": {
+            "ko": "요구조건 정의",
+            "en": "Requirements"
+          },
+          "text": {
+            "ko": "운전 온도·하중·수명 등 설계 조건을 정합니다.",
+            "en": "Set operating temperature, loads and design life."
+          }
+        },
+        {
+          "title": {
+            "ko": "해석 기반 설계",
+            "en": "Analysis-driven design"
+          },
+          "text": {
+            "ko": "열·구조 연성해석으로 형상과 재료를 결정합니다.",
+            "en": "Decide geometry and materials with thermo-structural analysis."
+          }
+        },
+        {
+          "title": {
+            "ko": "건전성 평가",
+            "en": "Integrity assessment"
+          },
+          "text": {
+            "ko": "크리프·피로·파손 기준으로 평가합니다.",
+            "en": "Assess against creep, fatigue and failure criteria."
+          }
+        },
+        {
+          "title": {
+            "ko": "시험·개선",
+            "en": "Testing & iteration"
+          },
+          "text": {
+            "ko": "시험 결과로 설계를 개선합니다.",
+            "en": "Refine the design with test results."
+          }
+        }
+      ],
+      "activities": [
+        {
+          "title": {
+            "ko": "용융염원자로(MSR) 동결밸브의 열적 거동 해석",
+            "en": "Thermal behavior of freeze valves for molten salt reactors"
+          },
+          "ref": "한국원자력학회 (2025) · OOOOOOOOO"
+        },
+        {
+          "title": {
+            "ko": "용융염 환경 레이저 클래딩 소재의 부식·기계적 특성",
+            "en": "Corrosion and mechanical properties of laser-cladded alloys in molten salt"
+          },
+          "ref": "Nuclear Engineering and Technology (in preparation)"
+        },
+        {
+          "title": {
+            "ko": "원자력 시설 내부 폭발 하중의 TNT 등가성 평가",
+            "en": "TNT equivalency of internal explosions in nuclear facilities"
+          },
+          "ref": "Structural Engineering and Mechanics 97(3) (2026)"
+        },
+        {
+          "title": {
+            "ko": "고온 기기 구조 설계 및 건전성 평가",
+            "en": "OOOOOOOOO"
+          },
+          "ref": "OOOOOOOOO"
+        }
+      ]
+    }
+  ],
+  "methods": [
+    {
+      "title": {
+        "ko": "해석 도구",
+        "en": "Computational tools"
+      },
+      "items": [
+        {
+          "label": "FE Analysis",
+          "value": "ABAQUS · ANSYS · LS-DYNA · ADINA"
+        },
+        {
+          "label": "Pre-processing / CAD",
+          "value": "HyperMesh · CATIA · Inventor"
+        },
+        {
+          "label": "Programming",
+          "value": "Python · MATLAB · Fortran"
+        },
+        {
+          "label": "Machine learning",
+          "value": "TensorFlow · Keras"
+        }
+      ]
+    },
+    {
+      "title": {
+        "ko": "실험 및 계측",
+        "en": "Experiments & measurement"
+      },
+      "items": [
+        {
+          "label": "Material testing",
+          "value": "UTM · SHPB · Taylor impact"
+        },
+        {
+          "label": "Full-field measurement",
+          "value": "DIC"
+        },
+        {
+          "label": "Structural sensing",
+          "value": "Strain · Acceleration · Displacement"
+        },
+        {
+          "label": "Data acquisition",
+          "value": "LabVIEW"
+        }
+      ]
+    }
+  ]
+}

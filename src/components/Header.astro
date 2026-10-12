@@ -1,0 +1,34 @@
+---
+import TrussMark from './TrussMark.astro';
+import T from './T.astro';
+import { NAV, showJoin } from '../lib/nav';
+import settings from '../data/settings.json';
+const { active } = Astro.props;
+---
+<header class="hdr">
+  <div class="wrap wide">
+    <a href="/" class="brand" aria-label="SADI Lab home">
+      <TrussMark size={46} />
+      <span><b>{settings.lab.short}</b><small>{settings.lab.name.en}</small></span>
+    </a>
+    <nav class="nav" aria-label="Main">
+      <div class="nav-links" id="navLinks">
+        {NAV.map((n) => <a href={n.href} class="nl" aria-current={active === n.key ? 'page' : undefined}><T v={n.label} /></a>)}
+        {showJoin && <a href="/join/" class="btn sm outline" aria-current={active === 'join' ? 'page' : undefined}><T v={{ ko: '모집 안내', en: 'Join us' }} /></a>}
+      </div>
+      <div class="tools">
+        <div class="pill" role="group" aria-label="Language">
+          <button type="button" data-set-lang="ko" aria-pressed="true" aria-label="한국어">KO</button>
+          <button type="button" data-set-lang="en" aria-pressed="false" aria-label="English">EN</button>
+        </div>
+        <button type="button" class="iconbtn" data-theme-toggle aria-label="테마 전환">
+          <svg class="only-dark" width="18" height="18" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><circle cx="12" cy="12" r="4.2"></circle><path d="M12 2.5v2.2M12 19.3v2.2M2.5 12h2.2M19.3 12h2.2M5.3 5.3l1.6 1.6M17.1 17.1l1.6 1.6M5.3 18.7l1.6-1.6M17.1 6.9l1.6-1.6"></path></svg>
+          <svg class="only-light" width="18" height="18" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M20.5 14.2A8.5 8.5 0 0 1 9.8 3.5a8.5 8.5 0 1 0 10.7 10.7z"></path></svg>
+        </button>
+        <button type="button" class="iconbtn menu-btn" data-menu aria-expanded="false" aria-controls="navLinks" aria-label="Menu">
+          <svg width="18" height="18" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path d="M4 7h16M4 12h16M4 17h16"></path></svg>
+        </button>
+      </div>
+    </nav>
+  </div>
+</header>

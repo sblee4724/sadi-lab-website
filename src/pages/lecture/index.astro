@@ -1,0 +1,23 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import T from '../../components/T.astro';
+import SubHero from '../../components/SubHero.astro';
+import data from '../../data/lectures.json';
+import { RV, pad2 } from '../../lib/util';
+---
+<Layout title="SADI Lab — Lecture" active="lecture">
+  <SubHero title={{ ko: '강의', en: 'Courses' }} lead={data.intro} />
+  <section class="sec nt" style="padding:60px 0 120px">
+    <div class="wrap">
+      <div class="list">
+        {data.courses.map((c, i) => (
+          <div class={`rw course ${RV[i % 4]}`}>
+            <span class="n">{pad2(i + 1)}</span>
+            <div class="grow"><span class="ti"><T v={c.title} /></span><span class="sub"><T v={{ ko: c.title.en, en: c.title.ko }} /></span><p><T v={c.description} /></p></div>
+            <div class="meta"><span class="tag" style="font-family:var(--f-body);font-size:13px;padding:6px 12px;border-radius:14px"><T v={c.level} /></span><span class="mono t3" style="font-size:13px"><T v={{ ko: '개설 학기 ', en: 'Semester ' }} />{c.semester}</span></div>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+</Layout>
