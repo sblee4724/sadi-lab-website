@@ -46,6 +46,7 @@
     }
   },
   "show": {
+    "public": true,
     "publications": true,
     "join": true,
     "partners": false,
@@ -131,5 +132,15 @@
     "display": "Space Grotesk",
     "body": "Noto Sans KR",
     "mono": "JetBrains Mono"
+  },
+  "comingSoon": {
+    "title": {
+      "ko": "홈페이지 준비 중입니다",
+      "en": "Our website is coming soon"
+    },
+    "body": {
+      "ko": "부산대학교 기계공학부 구조해석·설계·지능 연구실(SADI) 홈페이지를 준비하고 있습니다.\n문의는 아래 이메일로 보내 주세요.",
+      "en": "The website of the Structural Analysis, Design & Intelligence Lab (SADI), Pusan National University, is being prepared.\nFor inquiries, please email us."
+    }
   }
 }

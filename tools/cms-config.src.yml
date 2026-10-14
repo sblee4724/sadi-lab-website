@@ -342,6 +342,7 @@ collections:
             widget: object
             collapsed: false
             fields:
+              - { label: "★ 사이트 공개 (끄면 모든 페이지가 '준비 중' 화면으로 바뀜)", name: public, widget: boolean, default: true }
               - { label: "모집 팝업 (홈 화면)", name: popup, widget: boolean }
               - { label: "'함께 연구할 사람' 모집 상자", name: recruitBox, widget: boolean }
               - { label: "협력 기관", name: partners, widget: boolean }
@@ -353,6 +354,10 @@ collections:
               - { label: "탭: 갤러리", name: gallery, widget: boolean }
               - { label: "탭: 강의", name: lecture, widget: boolean }
               - { label: "탭: 모집 안내", name: join, widget: boolean }
+          - label: "'준비 중' 화면 문구 (사이트 비공개일 때)"
+            name: comingSoon
+            widget: object
+            fields: [{ <<: *bi, label: "제목", name: title }, { <<: *bitext, label: "본문", name: body }]
           - label: "홈 화면 상단"
             name: hero
             widget: object

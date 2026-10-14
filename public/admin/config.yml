@@ -889,6 +889,10 @@ collections:
       widget: object
       collapsed: false
       fields:
+      - label: ★ 사이트 공개 (끄면 모든 페이지가 '준비 중' 화면으로 바뀜)
+        name: public
+        widget: boolean
+        default: true
       - label: 모집 팝업 (홈 화면)
         name: popup
         widget: boolean
@@ -922,6 +926,35 @@ collections:
       - label: '탭: 모집 안내'
         name: join
         widget: boolean
+    - label: '''준비 중'' 화면 문구 (사이트 비공개일 때)'
+      name: comingSoon
+      widget: object
+      fields:
+      - widget: object
+        collapsed: false
+        fields:
+        - label: 한국어
+          name: ko
+          widget: string
+        - label: English
+          name: en
+          widget: string
+          required: false
+        label: 제목
+        name: title
+      - widget: object
+        collapsed: false
+        fields:
+        - label: 한국어
+          name: ko
+          widget: text
+          hint: 줄바꿈은 그대로 반영됩니다. **굵게** 쓰면 강조됩니다.
+        - label: English
+          name: en
+          widget: text
+          required: false
+        label: 본문
+        name: body
     - label: 홈 화면 상단
       name: hero
       widget: object

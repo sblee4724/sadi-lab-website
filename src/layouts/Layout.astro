@@ -6,6 +6,8 @@ import Footer from '../components/Footer.astro';
 import Popup from '../components/Popup.astro';
 import { hexToRgb } from '../lib/util';
 import { on } from '../lib/nav';
+import TrussMark from '../components/TrussMark.astro';
+import T from '../components/T.astro';
 
 const { title, description = 'SADI Lab — Structural Analysis, Design & Intelligence Laboratory, Pusan National University', active = '' } = Astro.props;
 const th = settings.theme as any;
@@ -17,6 +19,8 @@ const fam = [f.display, f.body, f.mono].filter((v, i, a) => v && a.indexOf(v) ==
   .map((n) => `family=${n.trim().replace(/ /g, '+')}:wght@300;400;500;600;700;900`).join('&');
 const fontsHref = `https://fonts.googleapis.com/css2?${fam}&display=swap`;
 const def = th.default === 'dark' ? 'dark' : 'light';
+const isPublic = (settings.show as any).public !== false;
+const cs = (settings as any).comingSoon;
 ---
 <!doctype html>
 <html lang="ko" data-lang="ko" data-theme={def}>
@@ -25,6 +29,7 @@ const def = th.default === 'dark' ? 'dark' : 'light';
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>{title}</title>
   <meta name="description" content={description} />
+  {!isPublic && <meta name="robots" content="noindex, nofollow" />}
   <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -39,11 +44,24 @@ const def = th.default === 'dark' ? 'dark' : 'light';
   </script>
 </head>
 <body>
-  <a class="sr-only" href="#main">본문 바로가기</a>
-  <Header active={active} />
-  <main id="main"><slot /></main>
-  <Footer />
-  {on('popup') && active === 'home' && <Popup />}
+  {isPublic ? (
+    <>
+      <a class="sr-only" href="#main">본문 바로가기</a>
+      <Header active={active} />
+      <main id="main"><slot /></main>
+      <Footer />
+      {on('popup') && active === 'home' && <Popup />}
+    </>
+  ) : (
+    <main class="soon">
+      <TrussMark size={88} />
+      <b class="disp">{settings.lab.short} Lab</b>
+      <h1><T v={cs?.title ?? { ko: '홈페이지 준비 중입니다', en: 'Coming soon' }} /></h1>
+      <p><T v={cs?.body ?? { ko: '', en: '' }} /></p>
+      <a href={`mailto:${settings.contact.email}`}>{settings.contact.email}</a>
+      <div class="pill" role="group" aria-label="Language"><button type="button" data-set-lang="ko" aria-pressed="true">KO</button><button type="button" data-set-lang="en" aria-pressed="false">EN</button></div>
+    </main>
+  )}
   <script is:inline>
     (function () {
       var r = document.documentElement;
