@@ -142,5 +142,8 @@
       "ko": "석사·박사과정 학생, 학부연구생, 박사후연구원을 모집합니다. 구조해석, 가상측정, 기기 설계에 관심이 있다면 이메일로 연락해 주세요.",
       "en": "We are recruiting M.S. and Ph.D. students, undergraduate researchers and postdocs. If structural analysis, virtual sensing or equipment design interests you, send us an email."
     }
+  },
+  "preview": {
+    "key": "sadi-2026"
   }
 }

@@ -348,3 +348,10 @@ select.yr{height:40px;padding:0 14px;border-radius:20px;border:1px solid var(--l
 .soon h1{margin:8px 0 0;font-size:28px;font-weight:700}
 .soon p{margin:0;max-width:520px;font-size:16px;line-height:1.8;color:var(--t2)}
 .soon a{color:var(--ac);text-decoration:none;font-family:var(--f-mono);font-size:14px}
+
+/* private-site preview gate */
+:root:not([data-preview]) #fullSite{display:none !important}
+:root[data-preview] #soonPage{display:none !important}
+.preview-bar{position:sticky;top:0;z-index:40;display:flex;justify-content:center;gap:14px;flex-wrap:wrap;padding:8px 16px;background:#D9601A;color:#fff;font-size:13px;font-weight:700}
+.preview-bar a{color:#fff}
+:root[data-preview] .hdr{top:34px}

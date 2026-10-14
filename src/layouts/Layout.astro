@@ -21,6 +21,7 @@ const fontsHref = `https://fonts.googleapis.com/css2?${fam}&display=swap`;
 const def = th.default === 'dark' ? 'dark' : 'light';
 const isPublic = (settings.show as any).public !== false;
 const cs = (settings as any).comingSoon;
+const pkey = String((settings as any).preview?.key ?? '');
 ---
 <!doctype html>
 <html lang="ko" data-lang="ko" data-theme={def}>
@@ -35,6 +36,14 @@ const cs = (settings as any).comingSoon;
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link rel="stylesheet" href={fontsHref} />
   <style is:inline set:html={themeCss}></style>
+  {!isPublic && <script is:inline define:vars={{ pkey }}>
+    try {
+      var q = new URLSearchParams(location.search).get('preview');
+      if (q === 'off') localStorage.removeItem('sadi-preview');
+      else if (q && pkey && q === pkey) localStorage.setItem('sadi-preview', q);
+      if (pkey && localStorage.getItem('sadi-preview') === pkey) document.documentElement.setAttribute('data-preview', '');
+    } catch (e) {}
+  </script>}
   <script is:inline define:vars={{ def }}>
     try {
       var r = document.documentElement;
@@ -44,16 +53,8 @@ const cs = (settings as any).comingSoon;
   </script>
 </head>
 <body>
-  {isPublic ? (
-    <>
-      <a class="sr-only" href="#main">본문 바로가기</a>
-      <Header active={active} />
-      <main id="main"><slot /></main>
-      <Footer />
-      {on('popup') && active === 'home' && <Popup />}
-    </>
-  ) : (
-    <main class="soon">
+  {!isPublic && (
+    <main class="soon" id="soonPage">
       <TrussMark size={88} />
       <b class="disp">{settings.lab.short} Lab</b>
       <h1><T v={cs?.title ?? { ko: '홈페이지 준비 중입니다', en: 'Coming soon' }} /></h1>
@@ -62,6 +63,14 @@ const cs = (settings as any).comingSoon;
       <div class="pill" role="group" aria-label="Language"><button type="button" data-set-lang="ko" aria-pressed="true">KO</button><button type="button" data-set-lang="en" aria-pressed="false">EN</button></div>
     </main>
   )}
+  <div id={isPublic ? undefined : 'fullSite'}>
+    {!isPublic && <div class="preview-bar">미리보기 모드 · 방문자에게는 '준비 중' 화면이 보입니다 <a href="?preview=off">미리보기 끝내기</a></div>}
+    <a class="sr-only" href="#main">본문 바로가기</a>
+    <Header active={active} />
+    <main id="main"><slot /></main>
+    <Footer />
+    {on('popup') && active === 'home' && <Popup />}
+  </div>
   <script is:inline>
     (function () {
       var r = document.documentElement;

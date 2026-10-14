@@ -926,6 +926,14 @@ collections:
       - label: '탭: 모집 안내'
         name: join
         widget: boolean
+    - label: 미리보기 비밀단어 (비공개일 때 주인만 보기)
+      name: preview
+      widget: object
+      fields:
+      - label: 비밀단어
+        name: key
+        widget: string
+        hint: 비공개 상태에서 https://sadilab.kr/?preview=비밀단어 로 한 번 접속하면 그 브라우저에서만 전체 사이트가 보입니다. 끝내려면 ?preview=off
     - label: '''준비 중'' 화면 문구 (사이트 비공개일 때)'
       name: comingSoon
       widget: object
