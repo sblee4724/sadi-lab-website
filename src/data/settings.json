@@ -1,20 +1,4 @@
 {
-  "lab": {
-    "short": "SADI",
-    "name": {
-      "ko": "구조해석·설계·지능 연구실",
-      "en": "Structural Analysis, Design & Intelligence Lab"
-    },
-    "full": "Structural Analysis, Design & Intelligence Laboratory",
-    "dept": {
-      "ko": "부산대학교 공과대학 기계공학부",
-      "en": "School of Mechanical Engineering, College of Engineering, Pusan National University"
-    },
-    "univ": {
-      "ko": "부산대학교",
-      "en": "Pusan National University"
-    }
-  },
   "contact": {
     "email": "sb.lee@pusan.ac.kr",
     "tel": {
@@ -32,70 +16,10 @@
     "googleMap": "https://maps.app.goo.gl/QmCCBTvf3ERLgCiXA",
     "naverMap": "https://naver.me/F9N44XkL"
   },
-  "hero": {
-    "imageLight": "/images/hero-light.webp",
-    "imageDark": "/images/hero-dark.webp",
-    "position": "70% 50%",
-    "eyebrow": {
-      "ko": "부산대학교 공과대학 기계공학부",
-      "en": "School of Mechanical Engineering · Pusan National University"
-    },
-    "lead": {
-      "ko": "구조물을 계산으로 해석하고(Analysis), 계측과 모델로 상태를 읽어내며(Intelligence), 더 안전한 기기를 설계합니다(Design).\n**전산역학**, **지능형구조**, **첨단기기개발**을 연구합니다.",
-      "en": "We analyze structures by computation, read their state with measurements and models, and design safer equipment.\nOur research: **computational mechanics**, **intelligent structures** and **advanced equipment development**."
-    }
-  },
-  "show": {
-    "public": true,
-    "publications": true,
-    "join": true,
-    "partners": false,
-    "popup": true,
-    "recruitBox": true,
-    "gallery": true,
-    "news": true,
-    "projects": true,
-    "research": true,
-    "team": true,
-    "lecture": true
-  },
-  "popup": {
-    "title": {
-      "ko": "대학원생 · 박사후연구원 · 학부연구생 모집",
-      "en": "Recruiting graduate students, postdocs & undergraduate researchers"
-    },
-    "body": {
-      "ko": "부산대학교 기계공학부 구조해석·설계·지능 연구실(SADI)에서 **더 안전하고 가치 있는 엔지니어링**을 위한 구조 연구에 함께할 신입 대학원생(석사·박사), 박사후연구원 및 학부연구생을 모집합니다.",
-      "en": "The Structural Analysis, Design & Intelligence Lab (SADI) at PNU Mechanical Engineering is recruiting new M.S./Ph.D. students, postdoctoral researchers and undergraduate researchers to work toward **safer, more valuable engineering**."
-    },
-    "points": [
-      {
-        "ko": "전산역학(유한요소·멀티피직스 해석), 지능형구조(가상측정·디지털 트윈), 첨단기기개발(차세대 원자로 기기 설계) 등 다양한 연구 분야",
-        "en": "Computational mechanics (finite elements, multiphysics), intelligent structures (virtual sensing, digital twins) and advanced equipment development (next-generation reactor components)"
-      },
-      {
-        "ko": "국내외 학술대회 발표, 연구기관·산업체 공동연구 참여 등 함께 성장하는 연구 환경",
-        "en": "Conference presentations at home and abroad and joint research with institutes and industry"
-      }
-    ],
-    "closing": {
-      "ko": "연구실에 관심 있는 학생은 메일로 연락 바랍니다.",
-      "en": "If you are interested, please get in touch by email."
-    },
-    "signature": {
-      "ko": "이승보 교수",
-      "en": "Prof. Sungbo Lee"
-    }
-  },
-  "recruit": {
-    "title": {
-      "ko": "함께 연구할 사람을 찾습니다",
-      "en": "We are looking for people to research with"
-    },
-    "body": {
-      "ko": "석사·박사과정 학생, 학부연구생, 박사후연구원을 모집합니다. 구조해석, 가상측정, 기기 설계에 관심이 있다면 이메일로 연락해 주세요.",
-      "en": "We are recruiting M.S. and Ph.D. students, undergraduate researchers and postdocs. If structural analysis, virtual sensing or equipment design interests you, send us an email."
-    }
+  "fonts": {
+    "display": "Space Grotesk",
+    "body": "Noto Sans KR",
+    "mono": "JetBrains Mono"
   },
   "theme": {
     "default": "light",
@@ -128,10 +52,62 @@
       "line2": "#3A3532"
     }
   },
-  "fonts": {
-    "display": "Space Grotesk",
-    "body": "Noto Sans KR",
-    "mono": "JetBrains Mono"
+  "popup": {
+    "title": {
+      "ko": "대학원생 · 박사후연구원 · 학부연구생 모집",
+      "en": "Recruiting graduate students, postdocs & undergraduate researchers"
+    },
+    "body": {
+      "ko": "부산대학교 기계공학부 구조해석·설계·지능 연구실(SADI)에서 **더 안전하고 가치 있는 엔지니어링**을 위한 구조 연구에 함께할 신입 대학원생(석사·박사), 박사후연구원 및 학부연구생을 모집합니다.",
+      "en": "The Structural Analysis, Design & Intelligence Lab (SADI) at PNU Mechanical Engineering is recruiting new M.S./Ph.D. students, postdoctoral researchers and undergraduate researchers to work toward **safer, more valuable engineering**."
+    },
+    "points": [
+      {
+        "ko": "전산역학(유한요소·멀티피직스 해석), 지능형구조(가상측정·디지털 트윈), 첨단기기개발(차세대 원자로 기기 설계) 등 다양한 연구 분야",
+        "en": "Computational mechanics (finite elements, multiphysics), intelligent structures (virtual sensing, digital twins) and advanced equipment development (next-generation reactor components)"
+      },
+      {
+        "ko": "국내외 학술대회 발표, 연구기관·산업체 공동연구 참여 등 함께 성장하는 연구 환경",
+        "en": "Conference presentations at home and abroad and joint research with institutes and industry"
+      }
+    ],
+    "closing": {
+      "ko": "연구실에 관심 있는 학생은 메일로 연락 바랍니다.",
+      "en": "If you are interested, please get in touch by email."
+    },
+    "signature": {
+      "ko": "이승보 교수",
+      "en": "Prof. Sungbo Lee"
+    }
+  },
+  "lab": {
+    "short": "SADI",
+    "name": {
+      "ko": "구조해석·설계·지능 연구실",
+      "en": "Structural Analysis, Design & Intelligence Lab"
+    },
+    "full": "Structural Analysis, Design & Intelligence Laboratory",
+    "dept": {
+      "ko": "부산대학교 공과대학 기계공학부",
+      "en": "School of Mechanical Engineering, College of Engineering, Pusan National University"
+    },
+    "univ": {
+      "ko": "부산대학교",
+      "en": "Pusan National University"
+    }
+  },
+  "hero": {
+    "imageLight": "/images/hero-light.webp",
+    "imageDark": "/images/hero-dark.webp",
+    "position": "70% 50%",
+    "eyebrow": {
+      "ko": "부산대학교 공과대학 기계공학부",
+      "en": "School of Mechanical Engineering · Pusan National University"
+    },
+    "lead": {
+      "ko": "구조물을 계산으로 해석하고(Analysis), 계측과 모델로 상태를 읽어내며(Intelligence), 더 안전한 기기를 설계합니다(Design).\n**전산역학**, **지능형구조**, **첨단기기개발**을 연구합니다.",
+      "en": "We analyze structures by computation, read their state with measurements and models, and design safer equipment.\nOur research: **computational mechanics**, **intelligent structures** and **advanced equipment development**."
+    }
   },
   "comingSoon": {
     "title": {
@@ -141,6 +117,30 @@
     "body": {
       "ko": "부산대학교 기계공학부 구조해석·설계·지능 연구실(SADI) 홈페이지를 준비하고 있습니다.\n문의는 아래 이메일로 보내 주세요.",
       "en": "The website of the Structural Analysis, Design & Intelligence Lab (SADI), Pusan National University, is being prepared.\nFor inquiries, please email us."
+    }
+  },
+  "show": {
+    "publications": true,
+    "public": false,
+    "join": true,
+    "partners": false,
+    "popup": true,
+    "recruitBox": true,
+    "gallery": true,
+    "news": true,
+    "projects": true,
+    "research": true,
+    "team": true,
+    "lecture": true
+  },
+  "recruit": {
+    "title": {
+      "ko": "함께 연구할 사람을 찾습니다",
+      "en": "We are looking for people to research with"
+    },
+    "body": {
+      "ko": "석사·박사과정 학생, 학부연구생, 박사후연구원을 모집합니다. 구조해석, 가상측정, 기기 설계에 관심이 있다면 이메일로 연락해 주세요.",
+      "en": "We are recruiting M.S. and Ph.D. students, undergraduate researchers and postdocs. If structural analysis, virtual sensing or equipment design interests you, send us an email."
     }
   }
 }
