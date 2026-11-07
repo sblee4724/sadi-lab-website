@@ -16,13 +16,13 @@
   },
   "overview": {
     "title": {
-      "ko": "구조물은 말하지 않습니다",
-      "en": "Structures do not speak"
+      "ko": "보이지 않는 구조 거동을 읽어냅니다",
+      "en": "Understanding What Structures Do Not Reveal"
     },
     "paragraphs": [
       {
         "ko": "운용중인 구조물은 내부 응력과 변형 상태를 직접 파악하기 어렵습니다. 계측 가능한 위치는 제한적이며, 해석 모델과 실제 운용 조건 사이에도 차이가 발생할 수 있습니다.",
-        "en": "For oprational structures, internal stresses and deformations are difficult to observe directly during operation. Sensor locations are limited, and actual operating conditions may differ from analytical assumptions."
+        "en": "Internal stresses and deformations of structures in operation are difficult to observe directly. Sensor locations are limited, and actual operating conditions may differ from analytical assumptions."
       },
       {
         "ko": "SADI는 전산해석으로 구조 거동을 예측하고, 제한된 계측으로 미계측 영역의 응답을 추정하며, 그 결과를 안전하고 신뢰성 높은 구조설계에 활용합니다.",
@@ -50,8 +50,8 @@
         "en": "Accurate and Efficient Computational Analysis"
       },
       "intro": {
-        "ko": "복잡한 형상, 재료 비선형성 및 다물리 하중 조건에서 신뢰성 있는 해석을 위해서는 적절한 모델링과 수치기법이 필요합니다. SADI는 유한요소 정식화, 연성해석 및 축소모델 기법을 연구하여 해석의 정확도와 계산 효율을 높입니다.",
-        "en": "Reliable analysis of complex geometries, material nonlinearities, and coupled physical phenomena requires appropriate models and numerical methods. SADI studies finite element formulations, coupled analyses, and reduced-order modeling to improve accuracy and computational efficiency."
+        "ko": "기하 및 재료 비선형성, 다물리 하중 조건이 얽힌 문제를 신뢰성 있게 해석하려면 적절한 모델링과 수치기법이 필요합니다. SADI는 유한요소 기법, 연성해석 및 축소모델 기법을 연구하여 해석의 정확도와 계산 효율을 높입니다.",
+        "en": "Reliable analysis of problems involving geometric and material nonlinearities and multiphysics loading requires appropriate modeling and numerical methods. SADI studies finite element methods, coupled analyses, and reduced-order modeling to improve accuracy and computational efficiency."
       },
       "steps": [
         {
@@ -66,22 +66,22 @@
         },
         {
           "title": {
-            "ko": "요소 정식화",
-            "en": "Element formulation"
+            "ko": "유한요소 기법",
+            "en": "Finite element methods"
           },
           "text": {
-            "ko": "다각형 요소와 층간 미끄럼을 고려한 적층 쉘 요소 등 적절한 유한요소를 정식화합니다.",
-            "en": "Formulate finite elements, including polygonal elements and layered shell elements with interlayer slip."
+            "ko": "복잡한 물리 현상을 모사할 수 있는 유한요소를 개발하고, 잠김(locking) 완화 등 해석 절차와 수치기법을 개선합니다.",
+            "en": "Develop finite elements that capture complex physical phenomena and improve solution procedures and numerical techniques, including locking alleviation."
           }
         },
         {
           "title": {
-            "ko": "연성 해석",
-            "en": "Coupled solution"
+            "ko": "다물리·충격 해석",
+            "en": "Multiphysics & impact analysis"
           },
           "text": {
-            "ko": "열–구조, 유체–구조 및 충격 문제를 해석합니다.",
-            "en": "Analyze thermo-mechanical, fluid–structure, and impact problems."
+            "ko": "열–구조, 유체–구조 연성 문제와 고속 충격 문제를 해석합니다.",
+            "en": "Analyze coupled thermo-mechanical and fluid–structure problems, as well as high-rate impact problems."
           }
         },
         {
@@ -98,29 +98,29 @@
       "activities": [
         {
           "title": {
-            "ko": "다각형 유한요소와 기하 비선형 해석",
-            "en": "Polygonal finite elements for geometric nonlinearity"
+            "ko": "변형률 평활화 다각형 유한요소의 기하 비선형 해석",
+            "en": "Strain-smoothed polygonal finite elements for geometric nonlinear analysis"
           },
           "ref": "Strain-smoothed polygonal element · Computers & Structures (in preparation)"
         },
         {
           "title": {
-            "ko": "미끄럼이 있는 적층 쉘 요소의 동적 거동",
-            "en": "Layered shell elements with interlayer slip"
+            "ko": "층간 미끄럼을 고려한 적층 쉘 요소의 모드 거동",
+            "en": "Modal behavior of layered shell elements with interlayer slip"
           },
           "ref": "Steel and Composite Structures 60(1) (2026)"
         },
         {
           "title": {
-            "ko": "유탄성 해석에서 응력 RAO 직접 계산",
-            "en": "Direct stress RAOs in hydroelastic analysis"
+            "ko": "유탄성 해석에서 응력 RAO의 직접 계산",
+            "en": "Direct calculation of stress RAOs in hydroelastic analysis"
           },
           "ref": "Ocean Engineering 312 (2024)"
         },
         {
           "title": {
-            "ko": "초고변형률속도 재료 모델과 충격 해석",
-            "en": "High strain-rate material models and impact analysis"
+            "ko": "고변형률속도 재료 거동과 충격 파단 해석",
+            "en": "High-strain-rate material behavior and impact fracture analysis"
           },
           "ref": "Int. J. Impact Engineering 149 (2021), 180 (2023) · Metals 12(3) (2022)"
         }
@@ -145,8 +145,8 @@
         "en": "Estimating Full-Field Structural Responses from Limited Sensors"
       },
       "intro": {
-        "ko": "실제 구조물에 설치할 수 있는 센서는 제한적이지만, 구조건전성 평가에는 미계측 위치의 변형과 응력 정보도 중요합니다. 가상센싱은 계측 신호와 구조모델을 결합하여 센서가 없는 영역의 응답을 추정합니다. 디지털 트윈과의 연계는 향후 확장 방향입니다.",
-        "en": "Sensor coverage is limited in real structures, while integrity assessment also requires responses at uninstrumented locations. Virtual sensing combines measurements with structural models to estimate these responses. Integration with digital twins is a future research direction."
+        "ko": "실제 구조물에 설치할 수 있는 센서는 제한적이지만, 구조건전성 평가에는 미계측 위치의 변형과 응력 정보도 중요합니다. 가상센싱은 계측 신호와 구조모델을 결합하여 센서가 없는 영역의 응답을 추정합니다.",
+        "en": "Sensor coverage is limited in real structures, while integrity assessment also requires responses at uninstrumented locations. Virtual sensing combines measurements with structural models to estimate these responses."
       },
       "steps": [
         {
@@ -175,99 +175,11 @@
             "en": "State reconstruction"
           },
           "text": {
-            "ko": "변형률·변위 등 구조응답을 재구성하고 건전성 평가에 활용합니다. 손상 지표 및 잔여수명 추정은 향후 연구 방향입니다.",
-            "en": "Reconstruct structural responses, such as strain and displacement, for integrity assessment. Damage indicators and remaining-life prediction are future research directions."
+            "ko": "변형률·변위 등 구조응답을 재구성하고 건전성 평가에 활용합니다.",
+            "en": "Reconstruct structural responses, such as strain and displacement, for integrity assessment."
           }
         }
       ],
-      "table": {
-        "head": [
-          {
-            "ko": "항목",
-            "en": "Item"
-          },
-          {
-            "ko": "기존 계측",
-            "en": "Conventional sensing"
-          },
-          {
-            "ko": "가상측정",
-            "en": "Virtual sensing"
-          }
-        ],
-        "rows": [
-          [
-            {
-              "ko": "측정 범위",
-              "en": "Coverage"
-            },
-            {
-              "ko": "센서 위치의 점 정보",
-              "en": "Point values at sensors"
-            },
-            {
-              "ko": "미계측 위치를 포함한 공간 응답장 추정",
-              "en": "Estimated response fields, including uninstrumented locations"
-            }
-          ],
-          [
-            {
-              "ko": "필요 센서 수",
-              "en": "Sensors needed"
-            },
-            {
-              "ko": "많음",
-              "en": "Many"
-            },
-            {
-              "ko": "제한된 수의 센서 (배치에 따라 성능 변화)",
-              "en": "Limited sensors (performance depends on placement)"
-            }
-          ],
-          [
-            {
-              "ko": "접근 불가 부위",
-              "en": "Inaccessible regions"
-            },
-            {
-              "ko": "측정 불가",
-              "en": "Not measurable"
-            },
-            {
-              "ko": "모델로 추정",
-              "en": "Estimated by model"
-            }
-          ],
-          [
-            {
-              "ko": "실시간성",
-              "en": "Real time"
-            },
-            {
-              "ko": "가능",
-              "en": "Yes"
-            },
-            {
-              "ko": "가능 (모델 및 계산 조건에 따라 다름)",
-              "en": "Possible (depending on the model and computational setup)"
-            }
-          ],
-          [
-            {
-              "ko": "디지털 트윈 연계",
-              "en": "Digital-twin link"
-            },
-            {
-              "ko": "제한적",
-              "en": "Limited"
-            },
-            {
-              "ko": "향후 연계 가능",
-              "en": "Potential for future integration"
-            }
-          ]
-        ]
-      },
       "activities": [
         {
           "title": {

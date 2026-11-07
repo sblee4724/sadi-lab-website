@@ -6,22 +6,24 @@ import r from '../../data/research.json';
 import partners from '../../data/partners.json';
 import { RV, AREA_COLOR, pad2 } from '../../lib/util';
 import { on } from '../../lib/nav';
-const toc = [
-  ...r.areas.map((a, i) => ({ id: a.key, n: `02.${i + 1}`, c: AREA_COLOR[a.key], label: a.title })),
-  ...(on('methods') ? [{ id: 'methods', n: '02.4', c: 'var(--t3)', label: { ko: '연구 방법', en: 'Methods' } }] : []),
-  ...(on('partners') ? [{ id: 'partners', n: on('methods') ? '02.5' : '02.4', c: 'var(--t3)', label: { ko: '협력 기관', en: 'Partners' } }] : []),
-];
 ---
 <Layout title="SADI Lab — Research" active="research">
   <SubHero title={r.hero.title} lead={r.hero.lead} image={r.hero.image} pos="50% 40%" />
-  <section class="sec nt">
-    <div class="wrap stack">
-      <h2 class="h2 l rv"><T v={r.overview.title} /></h2>
-      <div class="overview">
-        <div class="stack g22" style="flex:1 1 0">{r.overview.paragraphs.map((p, i) => <p class={`lead ${RV[i]}`}><T v={p} /></p>)}</div>
-        <nav class="toc rv2" aria-label="Research sections">
-          {toc.map((t) => <a href={`#${t.id}`}><span class="n" style={`color:${t.c}`}>{t.n}</span><span class="x"><T v={t.label} /></span><span class="ar t2">→</span></a>)}
-        </nav>
+  <section class="sec nt" style="padding:80px 0 100px">
+    <div class="wrap">
+      <div class="cards3">
+        {r.areas.map((a: any, i: number) => (
+          <a href={`#${a.key}`} class={`card acard ${RV[i]}`}>
+            <div class="img"><img src={a.image} alt="" class="zi" style={`object-position:${a.imagePos}`} loading="lazy" /></div>
+            <div class="body">
+              <span class="num" style={`color:${AREA_COLOR[a.key]}`}>{i + 1}</span>
+              <span class="ttl"><T v={a.title} /></span>
+              <span class="sub">{a.sub}</span>
+              <p><T v={a.summary} /></p>
+              <span class="go"><T v={{ ko: '자세히', en: 'Learn more' }} /> <span class="ar">↓</span></span>
+            </div>
+          </a>
+        ))}
       </div>
     </div>
   </section>
@@ -32,7 +34,7 @@ const toc = [
         <div class="banner rz">
           <img src={a.image} alt="" style={`object-position:${a.imagePos}`} loading="lazy" />
           <div class="shade"></div>
-          <div class="cap"><span class="mono" style={`font-size:14px;color:${AREA_COLOR[a.key]}`}>02.{ai + 1}</span><b><T v={a.title} /></b><span>{a.sub}</span></div>
+          <div class="cap"><span class="mono" style={`font-size:14px;color:${AREA_COLOR[a.key]}`}>{ai + 1}</span><b><T v={a.title} /></b><span>{a.sub}</span></div>
         </div>
         <div class="stack g22"><h3 class="h3 rv"><T v={a.headline} /></h3><p class="lead w rv"><T v={a.intro} /></p></div>
         <div class="steps" style={`grid-template-columns:repeat(${a.steps.length},minmax(0,1fr))`}>

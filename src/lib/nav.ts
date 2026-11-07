@@ -2,6 +2,7 @@ import settings from '../data/settings.json';
 import { L } from './util';
 const show = settings.show as Record<string, boolean>;
 export const NAV = [
+  { key: 'home', href: '/', label: L('홈', 'Home') },
   { key: 'research', href: '/research/', label: L('연구', 'Research') },
   { key: 'publications', href: '/publications/', label: L('논문', 'Publications') },
   { key: 'projects', href: '/projects/', label: L('과제', 'Projects') },

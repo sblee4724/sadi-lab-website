@@ -581,32 +581,6 @@ collections:
         required: false
       label: 홈 화면 연구 섹션 제목
       name: homeTitle
-    - label: 연구 개요
-      name: overview
-      widget: object
-      fields:
-      - widget: object
-        collapsed: false
-        fields:
-        - label: 한국어
-          name: ko
-          widget: string
-        - label: English
-          name: en
-          widget: string
-          required: false
-        label: 제목
-        name: title
-      - label: 문단
-        name: paragraphs
-        widget: list
-        fields:
-        - label: 한국어
-          name: ko
-          widget: text
-        - label: English
-          name: en
-          widget: text
     - label: 연구 분야 (3개)
       name: areas
       widget: list

@@ -12,58 +12,6 @@
         "en": "SADI Lab begins its research at Pusan National University."
       },
       "image": "/images/prof-sungbo-lee.jpg"
-    },
-    {
-      "date": "2026-09-02",
-      "category": "recruit",
-      "title": {
-        "ko": "2027학년도 전기 대학원 진학 문의 안내",
-        "en": "Graduate Research Inquiries for Spring 2027"
-      },
-      "summary": {
-        "ko": "석사·박사과정 진학 및 연구 참여에 관심 있는 분은 이메일로 문의해 주세요. 모집 여부와 지원 절차는 개별 안내합니다.",
-        "en": "Prospective M.S. and Ph.D. students are welcome to inquire by email. Availability and application procedures will be provided individually."
-      },
-      "image": "/images/hero-dark.webp"
-    },
-    {
-      "date": "2026-03-01",
-      "category": "paper",
-      "title": {
-        "ko": "Ocean Engineering 논문 게재",
-        "en": "Paper published in Ocean Engineering"
-      },
-      "summary": {
-        "ko": "Adaptive regularization for virtual sensing of structural deformation",
-        "en": "Adaptive regularization for virtual sensing of structural deformation"
-      },
-      "image": "/images/news-bwb.webp"
-    },
-    {
-      "date": "2026-02-01",
-      "category": "paper",
-      "title": {
-        "ko": "Steel and Composite Structures 논문 게재",
-        "en": "Paper published in Steel and Composite Structures"
-      },
-      "summary": {
-        "ko": "The modal behavior of the layered shell element with interlayer slips",
-        "en": "The modal behavior of the layered shell element with interlayer slips"
-      },
-      "image": "/images/news-layer.webp"
-    },
-    {
-      "date": "2025-06-01",
-      "category": "paper",
-      "title": {
-        "ko": "Computers & Structures 논문 게재",
-        "en": "Paper published in Computers & Structures"
-      },
-      "summary": {
-        "ko": "Strain sensor placement method considering operational loads for virtual sensing of structural deformation",
-        "en": "Strain sensor placement method considering operational loads for virtual sensing of structural deformation"
-      },
-      "image": "/images/news-jacket.webp"
     }
   ]
 }

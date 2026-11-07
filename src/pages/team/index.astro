@@ -4,22 +4,20 @@ import T from '../../components/T.astro';
 import SubHero from '../../components/SubHero.astro';
 import team from '../../data/team.json';
 import settings from '../../data/settings.json';
-import { RV, AREA_COLOR, AREA_LABEL } from '../../lib/util';
-import { on } from '../../lib/nav';
+import { RV } from '../../lib/util';
 const pi = team.pi, c = settings.contact;
 const members = team.members as any[];
 const alumni = team.alumni as any[];
-const groups = ['comp', 'intel', 'equip'];
 ---
 <Layout title="SADI Lab — Team" active="team">
-  <SubHero title={{ ko: 'SADI 팀', en: 'The SADI team' }} lead={{ ko: '부산대학교 기계공학부에서 구조해석·가상센싱·구조설계를 연구하는 사람들입니다.', en: 'We study structural analysis, virtual sensing, and structural design at the School of Mechanical Engineering, Pusan National University.' }} />
+  <SubHero title={{ ko: 'SADI 팀', en: 'The SADI team' }} lead={{ ko: '부산대학교 기계공학부에서 구조해석, 가상센싱, 구조설계를 함께 연구하는 SADI 구성원을 소개합니다.', en: 'Meet the members of SADI, working together on structural analysis, virtual sensing, and structural design at the School of Mechanical Engineering, Pusan National University.' }} />
   <section class="sec nt" style="padding:70px 0 100px">
     <div class="wrap">
       <div class="pi-full">
         <div class="left rv">
           <img src={pi.photo} alt="Prof. Sungbo Lee" />
           <div class="t2" style="display:flex;flex-direction:column;gap:8px;font-size:14px"><a href={`mailto:${c.email}`} style="color:var(--tx);text-decoration:none">{c.email}</a><span><T v={c.tel} /></span><span><T v={c.room} /></span></div>
-          <div style="display:flex;flex-wrap:wrap;gap:8px">{pi.links.map((l) => <a class="chip" href={l.url} target="_blank" rel="noopener">{l.label} ↗</a>)}</div>
+          <div style="display:flex;flex-wrap:wrap;gap:8px">{pi.links.filter((l) => l.url && l.url !== '#').map((l) => <a class="chip" href={l.url} target="_blank" rel="noopener">{l.label} ↗</a>)}</div>
         </div>
         <div class="stack g36 rv2" style="flex-grow:1">
           <div class="stack" style="gap:10px">
@@ -27,32 +25,25 @@ const groups = ['comp', 'intel', 'equip'];
             <span class="t2" style="font-size:17px"><T v={pi.position} /></span>
           </div>
           <div><b style="display:block;font-size:18px;padding-bottom:12px"><T v={{ ko: '학력 및 경력', en: 'Education & career' }} /></b>{pi.career.map((x) => <div class="cv"><span class="d">{x.period}</span><span><T v={x.text} /></span></div>)}</div>
-          <div><b style="display:block;font-size:18px;padding-bottom:12px"><T v={{ ko: '학술 활동 및 수상', en: 'Service & honors' }} /></b>{pi.honors.map((x) => <div class="cv"><span class="d">{x.period}</span><span><T v={x.text} /></span></div>)}</div>
         </div>
       </div>
     </div>
   </section>
   <section class="sec" style="padding:100px 0">
     <div class="wrap stack g36">
-      <h2 class="h2 s rv"><T v={{ ko: `구성원 · ${members.length}`, en: `Members · ${members.length}` }} /></h2>
-      <div class="grid3">
-        {groups.map((g, i) => {
-          const ms = members.filter((m) => m.group === g);
-          return (
-            <div class={RV[i]} style="display:flex;flex-direction:column;gap:16px">
-              <div style="display:flex;align-items:center;gap:10px;padding-bottom:12px;border-bottom:1px solid var(--ln)"><span style={`width:8px;height:8px;border-radius:4px;background:${AREA_COLOR[g]}`}></span><b style="font-size:16px"><T v={AREA_LABEL[g]} /></b><span class="mono t3" style="font-size:12px">{ms.length}</span></div>
-              {ms.map((m) => (
-                <div style="display:flex;gap:14px;align-items:center">
-                  <div class="photo-ph" style="width:64px;height:64px;border-radius:32px;font-size:9px">{m.photo ? <img src={m.photo} alt="" /> : '—'}</div>
-                  <div style="display:flex;flex-direction:column;gap:4px"><b style="font-size:16px"><T v={m.name} /></b><span class="t2" style="font-size:13px"><T v={m.role} /></span>{m.email && <a class="mono t3" style="font-size:12px;text-decoration:none" href={`mailto:${m.email}`}>{m.email}</a>}</div>
-                </div>
-              ))}
-              {on('join') && (
-                <a href="/join/" class="open-card"><span class="mono" style={`font-size:12px;color:${AREA_COLOR[g]}`}>INQUIRY</span><b style="font-size:17px"><T v={{ ko: '연구 참여 문의', en: 'Research Opportunities' }} /></b><span class="t2" style="font-size:14px"><T v={{ ko: '석사·박사 · 박사후연구원 · 학부연구생 (문의)', en: 'M.S. · Ph.D. · Postdoc · Undergraduate (inquiries welcome)' }} /> <span class="ar">→</span></span></a>
-              )}
+      <h2 class="h2 s rv"><T v={{ ko: '구성원', en: 'Members' }} /></h2>
+      {members.length ? (
+        <div class="grid4">
+          {members.map((m, i) => (
+            <div class={RV[i % 4]} style="display:flex;flex-direction:column;gap:10px">
+              <div class="photo-ph">{m.photo ? <img src={m.photo} alt="" /> : 'PHOTO'}</div>
+              <b style="font-size:17px"><T v={m.name} /></b>
+              <span class="t2" style="font-size:14px"><T v={m.role} /></span>
+              {m.email && <a class="mono t3" style="font-size:12px;text-decoration:none" href={`mailto:${m.email}`}>{m.email}</a>}
             </div>
-          );
-        })}
+          ))}
+        </div>
+      ) : <p class="t2 rv" style="margin:0;font-size:16px"><T v={{ ko: '구성원 정보는 추후 업데이트됩니다.', en: 'Member information will be updated.' }} /></p>}
       </div>
     </div>
   </section>
