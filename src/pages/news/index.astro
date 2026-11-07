@@ -10,7 +10,7 @@ const years = [...new Set(items.map((n) => n.date.slice(0, 4)))];
 const fmt = (d: string) => d.replace(/-/g, '. ') + '.';
 ---
 <Layout title="SADI Lab — News" active="news">
-  <SubHero title={{ ko: '연구실 소식', en: 'Lab news' }} lead={{ ko: 'SADI의 연구 소식, 논문 및 연구 참여 안내를 전합니다.', en: 'Updates on SADI research, publications, and opportunities.' }} />
+  <SubHero title={{ ko: '연구실 소식', en: 'Lab news' }} lead={{ ko: 'SADI의 연구 소식과 다양한 활동을 전합니다.', en: 'News and activities from SADI.' }} />
   <section class="sec nt" style="padding:70px 0 120px">
     <div class="wrap stack" style="gap:70px">
       {years.map((y) => (
