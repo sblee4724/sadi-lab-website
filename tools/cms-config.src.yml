@@ -347,6 +347,7 @@ collections:
               - { label: "'함께 연구할 사람' 모집 상자", name: recruitBox, widget: boolean }
               - { label: "협력 기관", name: partners, widget: boolean }
               - { label: "탭: 연구", name: research, widget: boolean }
+              - { label: "연구 페이지의 '연구 방법' 섹션", name: methods, widget: boolean, default: false }
               - { label: "탭: 논문", name: publications, widget: boolean }
               - { label: "탭: 과제", name: projects, widget: boolean }
               - { label: "탭: 팀", name: team, widget: boolean }

@@ -136,6 +136,7 @@ img{display:block;max-width:100%}
 
 /* PI card */
 .pi{display:flex;gap:40px;align-items:center;padding:30px;background:var(--s1);border:1px solid var(--ln);border-radius:22px}
+.pi.card{flex-direction:row}
 .pi .ph{width:190px;height:236px;border-radius:14px;overflow:hidden;flex-shrink:0}
 .pi .ph img{width:100%;height:100%;object-fit:cover}
 .pi .role{font-family:var(--f-mono);font-size:12px;letter-spacing:.08em;color:var(--ac)}
@@ -322,7 +323,7 @@ select.yr{height:40px;padding:0 14px;border-radius:20px;border:1px solid var(--l
   .hero p,.lead,.subhero p{font-size:16px}
   .subhero{height:340px}.subhero h1{font-size:36px}.subhero .wrap{padding-bottom:44px}
   .join-hero{height:auto;min-height:420px}.subhero h1.join-h{font-size:32px;line-height:1.35}.join-hero .wrap{padding:96px 24px 64px}
-  .pi{flex-direction:column;align-items:flex-start;padding:22px}
+  .pi,.pi.card{flex-direction:column;align-items:flex-start;padding:22px}
   .pi .ph{width:100%;height:280px}
   .pi-full .left,.pi-full .left img{width:100%}
   .recruit{flex-direction:column;align-items:flex-start;gap:28px}

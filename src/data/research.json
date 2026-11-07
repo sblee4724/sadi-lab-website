@@ -1,18 +1,18 @@
 {
   "hero": {
     "title": {
-      "ko": "구조의 전 생애를\n계산으로 다룹니다",
-      "en": "Handling the whole life of a structure\nby computation"
+      "ko": "구조물의 해석에서 상태추정과 설계까지",
+      "en": "From Structural Analysis to State Estimation and Design"
     },
     "lead": {
-      "ko": "해석으로 거동을 예측하고, 계측과 모델로 현재 상태를 읽어내며, 그 이해를 새로운 기기 설계로 연결합니다.",
-      "en": "We predict behavior by analysis, read the present state with measurements and models, and carry that understanding into new equipment design."
+      "ko": "전산해석으로 구조물의 거동을 예측하고, 계측과 모델로 상태를 추정하며, 그 결과를 구조설계와 건전성 평가에 활용합니다.",
+      "en": "We predict structural behavior through computational analysis, estimate structural states from measurements and models, and apply these insights to design and integrity assessment."
     },
     "image": "/images/research-overview.webp"
   },
   "homeTitle": {
-    "ko": "구조물을 계산하고, 읽어내고, 만들어내는\n모든 과정을 연구합니다",
-    "en": "We study every step — computing, reading\nand building structures"
+    "ko": "구조물을 해석하고, 상태를 추정하며, 더 나은 설계로 연결합니다",
+    "en": "From structural analysis and state estimation to engineering design"
   },
   "overview": {
     "title": {
@@ -21,12 +21,12 @@
     },
     "paragraphs": [
       {
-        "ko": "원자로 기기, 해양 구조물, 항공기처럼 극한 조건에서 운용되는 구조물은 내부의 응력과 손상을 직접 보여 주지 않습니다. 센서를 붙일 수 있는 위치는 제한되고, 설계 단계의 해석은 실제 운용 조건과 어긋나기 쉽습니다.",
-        "en": "Structures operating in extreme conditions — reactor components, offshore structures, aircraft — do not reveal their internal stress and damage. Sensor locations are limited, and design-stage analysis easily drifts from real operating conditions."
+        "ko": "운용중인 구조물은 내부 응력과 변형 상태를 직접 파악하기 어렵습니다. 계측 가능한 위치는 제한적이며, 해석 모델과 실제 운용 조건 사이에도 차이가 발생할 수 있습니다.",
+        "en": "For oprational structures, internal stresses and deformations are difficult to observe directly during operation. Sensor locations are limited, and actual operating conditions may differ from analytical assumptions."
       },
       {
-        "ko": "SADI는 이 간극을 계산으로 메웁니다. 정확한 전산해석으로 거동을 예측하고, 소수의 계측으로 구조 전체의 상태를 추정하며, 그 결과를 더 안전한 첨단기기 설계로 되돌립니다.",
-        "en": "SADI closes this gap by computation: we predict behavior with accurate analysis, estimate the whole structural state from a few measurements, and feed the results back into safer advanced equipment design."
+        "ko": "SADI는 전산해석으로 구조 거동을 예측하고, 제한된 계측으로 미계측 영역의 응답을 추정하며, 그 결과를 안전하고 신뢰성 높은 구조설계에 활용합니다.",
+        "en": "SADI predicts structural behavior through computational analysis, estimates responses in uninstrumented regions using limited measurements, and applies these results to safer, more reliable structural design."
       }
     ]
   },
@@ -42,16 +42,16 @@
       "image": "/images/area1-shell.webp",
       "imagePos": "50% 40%",
       "summary": {
-        "ko": "유한요소 정식화와 멀티피직스 연성해석으로 구조·열·충격 거동을 정확하고 빠르게 예측합니다.",
-        "en": "We predict structural, thermal and impact behavior accurately and fast with finite element formulations and coupled multiphysics analysis."
+        "ko": "유한요소해석과 다물리 연성해석으로 구조·열·충격 거동을 정확하고 효율적으로 예측합니다.",
+        "en": "We predict structural, thermal, and impact responses accurately and efficiently using finite element and multiphysics analyses."
       },
       "headline": {
-        "ko": "정확하고, 빠르고, 믿을 수 있는 해석",
-        "en": "Accurate, fast and trustworthy analysis"
+        "ko": "정확하고 효율적인 전산해석",
+        "en": "Accurate and Efficient Computational Analysis"
       },
       "intro": {
-        "ko": "복잡한 형상과 비선형 재료, 열·유동·충격이 얽힌 문제에서 해석의 신뢰도는 요소 정식화와 모델링 선택에 달려 있습니다.\nSADI는 새로운 유한요소를 개발하고, 연성해석과 축소모델로 해석의 정확도와 속도를 함께 끌어올립니다.",
-        "en": "For complex geometries, nonlinear materials and coupled thermal, flow and impact problems, the reliability of analysis depends on element formulation and modeling choices.\nSADI develops new finite elements and raises both accuracy and speed with coupled analysis and reduced-order models."
+        "ko": "복잡한 형상, 재료 비선형성 및 다물리 하중 조건에서 신뢰성 있는 해석을 위해서는 적절한 모델링과 수치기법이 필요합니다. SADI는 유한요소 정식화, 연성해석 및 축소모델 기법을 연구하여 해석의 정확도와 계산 효율을 높입니다.",
+        "en": "Reliable analysis of complex geometries, material nonlinearities, and coupled physical phenomena requires appropriate models and numerical methods. SADI studies finite element formulations, coupled analyses, and reduced-order modeling to improve accuracy and computational efficiency."
       },
       "steps": [
         {
@@ -60,8 +60,8 @@
             "en": "Physics modeling"
           },
           "text": {
-            "ko": "구조·열·유동·재료 거동을 지배방정식으로 정식화합니다.",
-            "en": "Formulate structural, thermal, flow and material behavior as governing equations."
+            "ko": "구조·열·유동 및 재료의 거동을 적절한 지배방정식과 구성모델로 표현합니다.",
+            "en": "Describe structural, thermal, fluid, and material behavior using governing equations and constitutive models."
           }
         },
         {
@@ -70,8 +70,8 @@
             "en": "Element formulation"
           },
           "text": {
-            "ko": "다각형·적층 쉘 등 새로운 유한요소로 이산화합니다.",
-            "en": "Discretize with new elements such as polygonal and layered shell elements."
+            "ko": "다각형 요소와 층간 미끄럼을 고려한 적층 쉘 요소 등 적절한 유한요소를 정식화합니다.",
+            "en": "Formulate finite elements, including polygonal elements and layered shell elements with interlayer slip."
           }
         },
         {
@@ -80,8 +80,8 @@
             "en": "Coupled solution"
           },
           "text": {
-            "ko": "열-구조, 유체-구조, 충격 해석을 수행합니다.",
-            "en": "Solve thermo-mechanical, fluid–structure and impact problems."
+            "ko": "열–구조, 유체–구조 및 충격 문제를 해석합니다.",
+            "en": "Analyze thermo-mechanical, fluid–structure, and impact problems."
           }
         },
         {
@@ -90,8 +90,8 @@
             "en": "Validation & ROM"
           },
           "text": {
-            "ko": "실험과 비교하고 축소모델로 빠르게 만듭니다.",
-            "en": "Validate against experiments and accelerate with reduced-order models."
+            "ko": "실험 결과와 비교해 해석 모델을 검증하고, 축소모델을 활용해 계산 효율을 높입니다.",
+            "en": "Validate models against experiments and improve computational efficiency using reduced-order models."
           }
         }
       ],
@@ -133,20 +133,20 @@
         "ko": "지능형구조",
         "en": "Intelligent Structures"
       },
-      "sub": "Virtual Sensing & Digital Twin",
+      "sub": "Virtual Sensing & State Estimation",
       "image": "/images/area2-virtual-sensing.webp",
       "imagePos": "72% 50%",
       "summary": {
-        "ko": "소수의 센서와 계산모델을 결합한 가상측정으로 구조물 전체의 변형과 상태를 실시간으로 추정합니다.",
-        "en": "We estimate the full-field deformation and state of structures in real time by fusing a few sensors with computational models."
+        "ko": "소수의 센서와 전산모델을 결합한 가상센싱으로 미계측 위치의 변형과 구조응답을 추정합니다.",
+        "en": "We estimate deformation and structural responses at uninstrumented locations by integrating limited sensor measurements with computational models."
       },
       "headline": {
-        "ko": "소수의 센서로 구조 전체를 읽어내다",
-        "en": "Reading a whole structure from a few sensors"
+        "ko": "소수의 센서로 구조물 전체의 응답을 추정하다",
+        "en": "Estimating Full-Field Structural Responses from Limited Sensors"
       },
       "intro": {
-        "ko": "실제 구조물에는 몇 개의 센서만 붙일 수 있지만, 안전 판단에 필요한 것은 구조 전체의 변형과 응력입니다.\n가상측정은 계측 신호와 계산모델의 모드 정보를 결합해 센서가 없는 위치까지 응답을 실시간으로 재구성합니다.",
-        "en": "Only a few sensors can be installed on a real structure, yet safety decisions need the full-field deformation and stress.\nVirtual sensing fuses measured signals with modal information from the computational model to reconstruct responses in real time — even where there are no sensors."
+        "ko": "실제 구조물에 설치할 수 있는 센서는 제한적이지만, 구조건전성 평가에는 미계측 위치의 변형과 응력 정보도 중요합니다. 가상센싱은 계측 신호와 구조모델을 결합하여 센서가 없는 영역의 응답을 추정합니다. 디지털 트윈과의 연계는 향후 확장 방향입니다.",
+        "en": "Sensor coverage is limited in real structures, while integrity assessment also requires responses at uninstrumented locations. Virtual sensing combines measurements with structural models to estimate these responses. Integration with digital twins is a future research direction."
       },
       "steps": [
         {
@@ -155,8 +155,8 @@
             "en": "Sparse measurement"
           },
           "text": {
-            "ko": "가속도·변형률 등 소수의 센서 신호를 받습니다.",
-            "en": "Acquire a few acceleration and strain signals."
+            "ko": "가속도·변형률 등 제한된 센서 신호를 수집합니다.",
+            "en": "Acquire measurements from a limited number of strain and acceleration sensors."
           }
         },
         {
@@ -165,8 +165,8 @@
             "en": "Model-based inference"
           },
           "text": {
-            "ko": "모드 중첩과 정규화로 전체 응답을 추정합니다.",
-            "en": "Estimate the full response by mode superposition and regularization."
+            "ko": "모드 중첩과 정규화 기법으로 미계측 응답을 추정합니다.",
+            "en": "Estimate unmeasured responses using modal superposition and regularization."
           }
         },
         {
@@ -175,8 +175,8 @@
             "en": "State reconstruction"
           },
           "text": {
-            "ko": "변형·응력장과 손상 지표, 잔여수명을 산출합니다.",
-            "en": "Produce deformation and stress fields, damage indicators and remaining life."
+            "ko": "변형률·변위 등 구조응답을 재구성하고 건전성 평가에 활용합니다. 손상 지표 및 잔여수명 추정은 향후 연구 방향입니다.",
+            "en": "Reconstruct structural responses, such as strain and displacement, for integrity assessment. Damage indicators and remaining-life prediction are future research directions."
           }
         }
       ],
@@ -206,8 +206,8 @@
               "en": "Point values at sensors"
             },
             {
-              "ko": "구조 전체의 연속 필드",
-              "en": "Continuous full field"
+              "ko": "미계측 위치를 포함한 공간 응답장 추정",
+              "en": "Estimated response fields, including uninstrumented locations"
             }
           ],
           [
@@ -220,8 +220,8 @@
               "en": "Many"
             },
             {
-              "ko": "소수 (최적 배치)",
-              "en": "Few (optimally placed)"
+              "ko": "제한된 수의 센서 (배치에 따라 성능 변화)",
+              "en": "Limited sensors (performance depends on placement)"
             }
           ],
           [
@@ -248,8 +248,8 @@
               "en": "Yes"
             },
             {
-              "ko": "가능 (경량 연산)",
-              "en": "Yes (lightweight)"
+              "ko": "가능 (모델 및 계산 조건에 따라 다름)",
+              "en": "Possible (depending on the model and computational setup)"
             }
           ],
           [
@@ -262,8 +262,8 @@
               "en": "Limited"
             },
             {
-              "ko": "직접 연계",
-              "en": "Direct"
+              "ko": "향후 연계 가능",
+              "en": "Potential for future integration"
             }
           ]
         ]
@@ -303,23 +303,23 @@
       "key": "equip",
       "num": "03",
       "title": {
-        "ko": "첨단기기개발",
-        "en": "Advanced Equipment Development"
+        "ko": "구조설계·건전성",
+        "en": "Structural Design & Integrity"
       },
-      "sub": "Design & Integrity for Extreme Environments",
+      "sub": "Structural Design & Integrity Assessment",
       "image": "/images/area3-equipment.webp",
       "imagePos": "50% 45%",
       "summary": {
-        "ko": "원자로·고온·극한환경 기기의 설계와 건전성 평가로 차세대 첨단기기를 개발합니다.",
-        "en": "We develop next-generation equipment through design and integrity assessment for reactor, high-temperature and extreme environments."
+        "ko": "고온·극한환경 기기의 구조설계와 건전성 평가를 통해 안전성과 신뢰성을 높입니다.",
+        "en": "We improve the safety and reliability of equipment for high-temperature and extreme environments through structural design and integrity assessment."
       },
       "headline": {
-        "ko": "극한환경에서도 견디는 기기를 설계하다",
-        "en": "Designing equipment that endures extreme environments"
+        "ko": "극한환경을 위한 구조설계와 건전성 평가",
+        "en": "Structural Design and Integrity Assessment for Extreme Environments"
       },
       "intro": {
-        "ko": "소형모듈원자로(SMR)와 같은 차세대 원자로와 에너지 시스템의 기기는 고온, 부식성 용융염을 견뎌야 합니다.\nSADI는 해석과 건전성 평가를 설계 단계에 통합해 새로운 기기를 개발합니다.",
-        "en": "Equipment for next-generation reactors and energy systems such as small modular reactors (SMR) must withstand high temperatures and corrosive molten salts.\nSADI integrates analysis and integrity assessment into the design stage to develop new equipment."
+        "ko": "소형모듈원자로(SMR), 용융염원자로(MSR) 등 차세대 원자로 및 에너지 시스템의 기기는 고온, 부식 및 복합하중 등 다양한 운전 조건을 고려해야 합니다. SADI는 열–구조 해석과 구조건전성 평가를 설계에 연계하여 기기의 안전성과 신뢰성을 높이는 방법을 연구합니다.",
+        "en": "Components in advanced reactors and energy systems, including small modular reactors (SMRs) and molten salt reactors (MSRs), face demanding conditions such as high temperatures, corrosion, and combined loads. SADI integrates thermo-mechanical analysis and structural integrity assessment into engineering design to improve safety and reliability."
       },
       "steps": [
         {
@@ -338,8 +338,8 @@
             "en": "Analysis-driven design"
           },
           "text": {
-            "ko": "열·구조 연성해석으로 형상과 재료를 결정합니다.",
-            "en": "Decide geometry and materials with thermo-structural analysis."
+            "ko": "열–구조 해석을 통해 형상과 재료의 적합성을 검토합니다.",
+            "en": "Evaluate geometry and material suitability through thermo-mechanical analysis."
           }
         },
         {
@@ -348,8 +348,8 @@
             "en": "Integrity assessment"
           },
           "text": {
-            "ko": "크리프·피로·파손 기준으로 평가합니다.",
-            "en": "Assess against creep, fatigue and failure criteria."
+            "ko": "적용 가능한 설계 기준에 따라 크리프·피로·파손 가능성을 평가합니다.",
+            "en": "Assess creep, fatigue, and failure against applicable design criteria."
           }
         },
         {
@@ -358,8 +358,8 @@
             "en": "Testing & iteration"
           },
           "text": {
-            "ko": "시험 결과로 설계를 개선합니다.",
-            "en": "Refine the design with test results."
+            "ko": "시험과 해석 결과를 바탕으로 설계안을 개선합니다.",
+            "en": "Refine designs based on experimental and analytical results."
           }
         }
       ],
@@ -369,7 +369,7 @@
             "ko": "용융염원자로(MSR) 동결밸브의 열적 거동 해석",
             "en": "Thermal behavior of freeze valves for molten salt reactors"
           },
-          "ref": "한국원자력학회 (2025) · OOOOOOOOO"
+          "ref": "한국원자력학회 (2025)"
         },
         {
           "title": {
@@ -387,10 +387,10 @@
         },
         {
           "title": {
-            "ko": "고온 기기 구조 설계 및 건전성 평가",
-            "en": "OOOOOOOOO"
+            "ko": "고온 기기의 구조설계 및 건전성 평가",
+            "en": "Structural design and integrity assessment of high-temperature equipment"
           },
-          "ref": "OOOOOOOOO"
+          "ref": ""
         }
       ]
     }

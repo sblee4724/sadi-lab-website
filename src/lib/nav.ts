@@ -8,7 +8,7 @@ export const NAV = [
   { key: 'team', href: '/team/', label: L('팀', 'Team') },
   { key: 'news', href: '/news/', label: L('소식', 'News') },
   { key: 'gallery', href: '/gallery/', label: L('갤러리', 'Gallery') },
-  { key: 'lecture', href: '/lecture/', label: L('강의', 'Lecture') },
+  { key: 'lecture', href: '/lecture/', label: L('강의', 'Courses') },
 ].filter((n) => show[n.key] !== false);
 export const showJoin = show.join !== false;
 export const on = (k: string) => show[k] !== false;

@@ -8,8 +8,8 @@ import { RV, AREA_COLOR, pad2 } from '../../lib/util';
 import { on } from '../../lib/nav';
 const toc = [
   ...r.areas.map((a, i) => ({ id: a.key, n: `02.${i + 1}`, c: AREA_COLOR[a.key], label: a.title })),
-  { id: 'methods', n: '02.4', c: 'var(--t3)', label: { ko: '연구 방법', en: 'Methods' } },
-  ...(on('partners') ? [{ id: 'partners', n: '02.5', c: 'var(--t3)', label: { ko: '협력 기관', en: 'Partners' } }] : []),
+  ...(on('methods') ? [{ id: 'methods', n: '02.4', c: 'var(--t3)', label: { ko: '연구 방법', en: 'Methods' } }] : []),
+  ...(on('partners') ? [{ id: 'partners', n: on('methods') ? '02.5' : '02.4', c: 'var(--t3)', label: { ko: '협력 기관', en: 'Partners' } }] : []),
 ];
 ---
 <Layout title="SADI Lab — Research" active="research">
@@ -46,12 +46,13 @@ const toc = [
         )}
         <h3 class="h3 rv"><T v={{ ko: '연구 활동', en: 'Research activities' }} /></h3>
         <div class="list">
-          {a.activities.map((x: any) => <div class="rw act"><span class="dot" style={`background:${AREA_COLOR[a.key]}`}></span><div class="grow" style="gap:6px"><b><T v={x.title} /></b><span>{x.ref}</span></div></div>)}
+          {a.activities.map((x: any) => <div class="rw act"><span class="dot" style={`background:${AREA_COLOR[a.key]}`}></span><div class="grow" style="gap:6px"><b><T v={x.title} /></b>{x.ref && <span>{x.ref}</span>}</div></div>)}
         </div>
       </div>
     </section>
   ))}
 
+  {on('methods') && (
   <section class="sec" id="methods" style="scroll-margin-top:72px">
     <div class="wrap stack">
       <h2 class="h2 m rv"><T v={{ ko: '연구 방법', en: 'Methods' }} /></h2>
@@ -60,13 +61,14 @@ const toc = [
       </div>
     </div>
   </section>
+  )}
 
   {on('partners') && (
     <section class="sec" id="partners" style="scroll-margin-top:72px">
       <div class="wrap stack">
         <h2 class="h2 m rv"><T v={{ ko: '협력 기관', en: 'Partner institutions' }} /></h2>
         <div style="border-bottom:1px solid var(--ln)">
-          {partners.groups.map((g) => <div class="cat rv"><b><T v={g.title} /></b><div>{g.items.map((x) => <span><T v={x} /></span>)}</div></div>)}
+          {partners.groups.filter((g) => g.items.length).map((g) => <div class="cat rv"><b><T v={g.title} /></b><div>{g.items.map((x) => <span><T v={x} /></span>)}</div></div>)}
         </div>
       </div>
     </section>

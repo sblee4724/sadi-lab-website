@@ -85,7 +85,7 @@ const pi = team.pi;
             ? team.members.slice(0, 4).map((m: any, i: number) => (
                 <div class={RV[i % 4]} style="display:flex;flex-direction:column;gap:12px"><div class="photo-ph">{m.photo ? <img src={m.photo} alt="" /> : 'PHOTO'}</div><span style="font-size:17px;font-weight:700"><T v={m.name} /></span><span class="t2" style="font-size:14px"><T v={m.role} /></span></div>))
             : team.openings.map((o, i) => (
-                <div class={RV[i % 4]} style="display:flex;flex-direction:column;gap:12px"><div class="photo-ph">PHOTO</div><span style="font-size:17px;font-weight:700">OOOOOOOOO</span><span class="t2" style="font-size:14px"><T v={o} /></span></div>))}
+                <a href={on('join') ? '/join/' : undefined} class={`open-card ${RV[i % 4]}`} style="min-height:150px;justify-content:space-between"><span class="mono" style="font-size:12px;color:var(--ac)">INQUIRY</span><b style="font-size:17px"><T v={o} /></b><span class="t2" style="font-size:14px"><T v={{ ko: '이메일로 문의해 주세요', en: 'Contact us by email' }} />{on('join') && <> <span class="ar">→</span></>}</span></a>))}
         </div>
       </div>
     </section>

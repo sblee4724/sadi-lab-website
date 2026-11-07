@@ -30,5 +30,5 @@ export const AREA_COLOR: Record<string, string> = { comp: 'var(--a1)', intel: 'v
 export const AREA_LABEL: Record<string, Bi> = {
   comp: L('전산역학', 'Comp. Mechanics'),
   intel: L('지능형구조', 'Intelligent Structures'),
-  equip: L('첨단기기개발', 'Equipment'),
+  equip: L('구조설계·건전성', 'Structural Design & Integrity'),
 };

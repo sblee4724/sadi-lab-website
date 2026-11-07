@@ -10,7 +10,7 @@ const granted = data.patents.filter((p) => p.status === 'granted').length;
 const filed = data.patents.length - granted;
 ---
 <Layout title="SADI Lab — Projects" active="projects">
-  <SubHero title={{ ko: '연구 과제', en: 'Research projects' }} lead={{ ko: 'SADI가 수행하는 연구 과제와 지식재산권입니다.', en: 'Research projects and intellectual property of SADI Lab.' }} image="/images/equipment.webp" pos="60% 50%" />
+  <SubHero title={{ ko: '연구 과제', en: 'Research projects' }} lead={{ ko: 'SADI의 연구 과제와 지식재산권을 소개합니다.', en: 'Explore SADI Lab research projects and intellectual property.' }} image="/images/equipment.webp" pos="60% 50%" />
   <section class="sec nt" style="padding:80px 0">
     <div class="wrap stack g30">
       <div class="row-between rv"><h2 class="h2 s"><T v={{ ko: '연구 과제', en: 'Research projects' }} /></h2><span class="t2" style="font-size:15px"><T v={{ ko: `진행 중 ${ongoing} · 완료 ${done}`, en: `${ongoing} ongoing · ${done} completed` }} /></span></div>

@@ -72,13 +72,6 @@
           "ko": "대통령과학장학금",
           "en": "Presidential Science Scholarship"
         }
-      },
-      {
-        "period": "OOOOOOOOO",
-        "text": {
-          "ko": "OOOOOOOOO",
-          "en": "OOOOOOOOO"
-        }
       }
     ]
   },
@@ -86,20 +79,20 @@
   "alumni": [],
   "openings": [
     {
-      "ko": "박사과정 · 모집 중",
-      "en": "Ph.D. student · open"
+      "ko": "박사과정 · 문의",
+      "en": "Ph.D. inquiries welcome"
     },
     {
-      "ko": "석사과정 · 모집 중",
-      "en": "M.S. student · open"
+      "ko": "석사과정 · 문의",
+      "en": "M.S. inquiries welcome"
     },
     {
-      "ko": "박사후연구원 · 모집 중",
-      "en": "Postdoc · open"
+      "ko": "박사후연구원 · 문의",
+      "en": "Postdoctoral inquiries welcome"
     },
     {
-      "ko": "학부연구생 · 모집 중",
-      "en": "Undergraduate · open"
+      "ko": "학부연구생 · 문의",
+      "en": "Undergraduate research inquiries welcome"
     }
   ]
 }
