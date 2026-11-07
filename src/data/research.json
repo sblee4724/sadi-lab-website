@@ -141,8 +141,8 @@
         "en": "We estimate deformation and structural responses at uninstrumented locations by integrating limited sensor measurements with computational models."
       },
       "headline": {
-        "ko": "소수의 센서로 구조물 전체의 응답을 추정하다",
-        "en": "Estimating Full-Field Structural Responses from Limited Sensors"
+        "ko": "운용 중 구조물의 응답 추정",
+        "en": "Estimating the Responses of Structures in Operation"
       },
       "intro": {
         "ko": "실제 구조물에 설치할 수 있는 센서는 제한적이지만, 구조건전성 평가에는 미계측 위치의 변형과 응력 정보도 중요합니다. 가상센싱은 계측 신호와 구조모델을 결합하여 센서가 없는 영역의 응답을 추정합니다.",

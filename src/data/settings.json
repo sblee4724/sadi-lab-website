@@ -21,9 +21,6 @@
     "body": "Noto Sans KR",
     "mono": "JetBrains Mono"
   },
-  "preview": {
-    "key": "sadi-2026"
-  },
   "theme": {
     "default": "light",
     "light": {
@@ -108,8 +105,8 @@
       "en": "School of Mechanical Engineering · Pusan National University"
     },
     "lead": {
-      "ko": "전산해석으로 구조물의 거동을 예측하고(Analysis), 계측과 모델로 구조물의 상태를 추정하며(Intelligence), 더 안전하고 신뢰할 수 있는 기기를 설계합니다(Design).\n**전산역학**, **지능형구조**, **구조설계·건전성**을 연구합니다.",
-      "en": "We predict structural behavior through computational analysis (Analysis), estimate structural states using measurements and models (Intelligence), and design safer, more reliable equipment (Design).\nOur research focuses on **Computational Mechanics**, **Intelligent Structures**, and **Structural Design and Integrity**."
+      "ko": "전산해석으로 구조물의 거동을 예측하고(Analysis), 계측과 모델로 구조물의 상태를 추정하며(Intelligence), 더 안전하고 신뢰할 수 있는 기기를 설계합니다(Design).",
+      "en": "We predict structural behavior through computational analysis (Analysis), estimate structural states using measurements and models (Intelligence), and design safer, more reliable equipment (Design)."
     }
   },
   "comingSoon": {
@@ -124,16 +121,16 @@
   },
   "show": {
     "publications": true,
-    "public": true,
+    "public": false,
     "join": true,
     "partners": false,
     "popup": true,
     "recruitBox": true,
     "gallery": false,
-    "methods": false,
     "news": true,
     "projects": false,
     "research": true,
+    "methods": false,
     "team": true,
     "lecture": true
   },
@@ -146,5 +143,8 @@
       "ko": "구조해석, 가상센싱, 구조설계 및 건전성 평가에 관심 있는 대학원 진학 희망자, 학부연구생 및 박사후연구원은 이메일로 문의해 주세요. 참여 가능 여부는 개별 안내합니다.",
       "en": "Prospective graduate students, undergraduate researchers, and postdoctoral researchers interested in structural analysis, virtual sensing, structural design, or integrity assessment are welcome to inquire by email. Availability will be confirmed individually."
     }
+  },
+  "preview": {
+    "key": "sadi-2026"
   }
 }
