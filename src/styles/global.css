@@ -154,7 +154,9 @@ img{display:block;max-width:100%}
 
 /* recruit block */
 .recruit{display:flex;justify-content:space-between;align-items:flex-end;gap:60px}
-.recruit .l{display:flex;flex-direction:column;gap:22px;max-width:700px}
+.recruit .l{display:flex;flex-direction:column;gap:22px;flex:1 1 auto;min-width:0}
+.recruit .rt{font-size:clamp(32px,3.2vw,46px)}
+.recruit .l .lead{max-width:700px}
 .recruit .r{display:flex;flex-direction:column;gap:14px;align-items:flex-end}
 
 /* research page */
@@ -238,6 +240,7 @@ select.yr{height:40px;padding:0 14px;border-radius:20px;border:1px solid var(--l
 .q .n{width:80px;flex-shrink:0;font-family:var(--f-mono);font-size:30px;color:var(--ac)}
 .q b{font-size:26px}
 .q span{font-size:17px;line-height:1.8;color:var(--t2)}
+.q b span{font-size:inherit;line-height:inherit;color:inherit}
 .doc{flex:1 1 0;display:flex;flex-direction:column;gap:14px;padding:30px;background:var(--s1);border:1px solid var(--ln);border-radius:18px}
 .doc .n{font-family:var(--f-mono);font-size:14px;color:var(--ac)}
 .doc b{font-size:19px}
@@ -248,8 +251,8 @@ select.yr{height:40px;padding:0 14px;border-radius:20px;border:1px solid var(--l
 /* footer */
 .ftr{border-top:1px solid var(--ln);padding:72px 0 40px}
 .ftr .top{display:flex;justify-content:space-between;gap:48px;flex-wrap:wrap}
-.ftr .l{display:flex;flex-direction:column;gap:16px;max-width:440px}
-.ftr .links{display:flex;flex-wrap:wrap;column-gap:20px;row-gap:10px;padding-top:8px}
+.ftr .l{display:flex;flex-direction:column;gap:16px;max-width:520px}
+.ftr .links{display:flex;flex-wrap:wrap;column-gap:18px;row-gap:10px;padding-top:8px}
 .ftr .links a{font-size:14px}
 .ftr .r{display:flex;flex-direction:column;gap:14px;font-size:14px;color:var(--t2);max-width:460px}
 .ftr .r>div{display:flex;gap:16px}
@@ -286,9 +289,9 @@ select.yr{height:40px;padding:0 14px;border-radius:20px;border:1px solid var(--l
 @supports (animation-timeline: view()){
   .rv,.rv2,.rv3,.rv4,.rz{animation-timing-function:linear;animation-fill-mode:both;animation-timeline:view()}
   .rv{animation-name:rvup;animation-range:entry 0% entry 85%}
-  .rv2{animation-name:rvup;animation-range:entry 15% cover 30%}
-  .rv3{animation-name:rvup;animation-range:entry 30% cover 36%}
-  .rv4{animation-name:rvup;animation-range:entry 45% cover 42%}
+  .rv2{animation-name:rvup;animation-range:entry 10% entry 90%}
+  .rv3{animation-name:rvup;animation-range:entry 20% entry 95%}
+  .rv4{animation-name:rvup;animation-range:entry 30% entry 100%}
   .rz{animation-name:rvz;animation-range:entry 0% cover 30%}
 }
 @media (prefers-reduced-motion: reduce){

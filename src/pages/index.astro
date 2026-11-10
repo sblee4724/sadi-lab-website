@@ -76,7 +76,7 @@ const pi = team.pi;
             <span class="role"><T v={{ ko: '지도교수', en: 'Principal Investigator' }} /></span>
             <span class="nm"><T v={pi.name} /> <small><span class="ko">{pi.name.en}, </span>{pi.degree}</small></span>
             <span class="t2" style="font-size:16px"><T v={pi.position} /></span>
-            <span class="t3" style="font-size:14px;line-height:1.7"><T v={pi.short} /></span>
+            {pi.short?.ko && <span class="t3" style="font-size:14px;line-height:1.7"><T v={pi.short} /></span>}
             <span style="padding-top:6px;font-size:14px;font-weight:500"><T v={{ ko: '프로필 보기', en: 'View profile' }} /> <span class="ar">→</span></span>
           </div>
         </a>

@@ -1,53 +1,40 @@
 {
   "headline": {
-    "ko": "정답을 외우기보다\n구조물이 왜 그렇게 거동하는지\n끝까지 질문하는 사람",
-    "en": "Someone who keeps asking\nwhy structures behave as they do,\nrather than memorizing answers"
+    "ko": "SADI와 함께\n연구할 분을 찾습니다",
+    "en": "Join SADI\nand Research with Us"
   },
   "image": "/images/equipment.webp",
   "qualities": [
     {
       "title": {
-        "ko": "질문하는 힘",
-        "en": "Asking questions"
+        "ko": "역학에 대한 관심",
+        "en": "Interest in mechanics"
       },
       "text": {
-        "ko": "결과만 확인하기보다 그 원인을 궁금해하고, 해석 결과를 비판적으로 검토합니다.",
-        "en": "You seek to understand why, not just what, and critically examine simulation results."
+        "ko": "고체역학, 동역학, 유한요소법 등 역학과 수치해석에 관심이 있는 분",
+        "en": "Those interested in mechanics and numerical analysis, such as solid mechanics, dynamics, and the finite element method"
       }
     },
     {
       "title": {
-        "ko": "끝까지 붙잡는 끈기",
-        "en": "Persistence"
+        "ko": "스스로 확인하는 자세",
+        "en": "Checking things for yourself"
       },
       "text": {
-        "ko": "수렴하지 않는 해석이나 실험과 맞지 않는 예측을 마주해도 원인을 차근차근 찾아갑니다.",
-        "en": "You investigate non-convergent simulations and discrepancies between experimental results and model predictions."
+        "ko": "해석 결과를 그대로 받아들이기보다 직접 따져 보는 분",
+        "en": "Those who examine analysis results for themselves rather than taking them at face value"
       }
     },
     {
       "title": {
-        "ko": "깊이 몰입하는 태도",
-        "en": "Deep focus"
+        "ko": "함께하는 연구",
+        "en": "Research together"
       },
       "text": {
-        "ko": "한 문제에 깊이 몰입하고, 그 과정에서 얻은 지식과 경험을 동료와 공유합니다.",
-        "en": "You engage deeply with a problem and share what you learn with your colleagues."
+        "ko": "연구 내용을 동료와 나누며 함께 성장하고 싶은 분",
+        "en": "Those who want to share their work with colleagues and grow together"
       }
     }
   ],
-  "documents": [
-    {
-      "ko": "이력서 (CV)",
-      "en": "Curriculum vitae"
-    },
-    {
-      "ko": "성적증명서",
-      "en": "Academic transcript"
-    },
-    {
-      "ko": "관심 연구 분야에 대한 간단한 소개",
-      "en": "A brief statement of research interests"
-    }
-  ]
+  "documents": []
 }

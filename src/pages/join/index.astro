@@ -17,7 +17,7 @@ const email = settings.contact.email;
   </section>
   <section class="sec nt">
     <div class="wrap stack" style="gap:40px">
-      <h2 class="h2 m rv"><T v={{ ko: '함께 연구할 분께', en: 'For Prospective Researchers' }} /></h2>
+      <h2 class="h2 m rv"><T v={{ ko: '이런 분을 기다립니다', en: 'Who We Are Looking For' }} /></h2>
       <div style="border-bottom:1px solid var(--ln)">
         {data.qualities.map((q, i) => <div class={`q ${RV[i % 4]}`}><span class="n">{pad2(i + 1)}</span><div style="display:flex;flex-direction:column;gap:12px"><b><T v={q.title} /></b><span><T v={q.text} /></span></div></div>)}
       </div>
@@ -27,9 +27,9 @@ const email = settings.contact.email;
     <div class="wrap stack" style="gap:40px">
       <div class="stack g22 rv">
         <h2 class="h2 m"><T v={{ ko: '연구 참여는 이메일로 문의해 주세요', en: 'Contact Us About Research Opportunities' }} /></h2>
-        <p class="lead" style="font-size:17px"><T v={{ ko: `관심 분야와 간단한 소개를 ${email} 로 보내 주세요. 연구 참여 가능 여부와 면담 일정은 개별 안내합니다.`, en: `Please send a brief introduction and your research interests to ${email}. We will respond regarding available opportunities and possible meetings.` }} /></p>
+        <p class="lead" style="font-size:17px"><T v={{ ko: `관심 분야와 간단한 자기소개를 ${email} 로 보내 주세요. 형식은 자유이며, 연구 참여 가능 여부와 면담 일정은 개별 안내합니다.`, en: `Please email ${email} with your research interests and a brief introduction. Any format is fine. We will get back to you about opportunities and possible meetings.` }} /></p>
       </div>
-      <div class="two">{data.documents.map((d, i) => <div class={`doc ${RV[i % 4]}`}><span class="n">{pad2(i + 1)}</span><b><T v={d} /></b></div>)}</div>
+      {data.documents?.length > 0 && <div class="two">{data.documents.map((d, i) => <div class={`doc ${RV[i % 4]}`}><span class="n">{pad2(i + 1)}</span><b><T v={d} /></b></div>)}</div>}
     </div>
   </section>
   <Recruit details={false} />

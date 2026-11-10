@@ -11,7 +11,7 @@ const c = settings.contact;
       <div class="l">
         <div style="display:flex;align-items:center;gap:12px"><TrussMark size={48} /><span class="disp" style="font-weight:700;font-size:24px">{settings.lab.short}</span></div>
         <span style="font-size:16px;font-weight:700"><T v={{ ko: '부산대학교 ' + settings.lab.name.ko, en: settings.lab.name.en }} /></span>
-        <span class="t2" style="font-size:14px;line-height:1.7"><T v={settings.lab.dept} /></span>
+        <span class="t2" style="font-size:14px;line-height:1.7"><T v={{ ko: settings.lab.dept.ko, en: settings.lab.dept.en.replace(/,\s*Pusan National University/, ',\nPusan National University') }} /></span>
         <div class="links">
           {NAV.map((n) => <a href={n.href} class="nl"><T v={n.label} /></a>)}
           {showJoin && <a href="/join/" class="nl"><T v={{ ko: '모집 안내', en: 'Join us' }} /></a>}

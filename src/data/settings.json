@@ -11,7 +11,7 @@
     },
     "address": {
       "ko": "부산광역시 금정구 부산대학로63번길 2, 부산대학교 기계관 619호",
-      "en": "Room 619, Mechanical Engineering Bldg., Pusan National University, 2 Busandaehak-ro 63beon-gil, Geumjeong-gu, Busan 46241, Korea"
+      "en": "School of Mechanical Engineering, Pusan National University, Busan 46241, Republic of Korea"
     },
     "googleMap": "https://maps.app.goo.gl/QmCCBTvf3ERLgCiXA",
     "naverMap": "https://naver.me/F9N44XkL"
@@ -20,9 +20,6 @@
     "display": "Space Grotesk",
     "body": "Noto Sans KR",
     "mono": "JetBrains Mono"
-  },
-  "preview": {
-    "key": "sadi-2026"
   },
   "theme": {
     "default": "light",
@@ -124,16 +121,16 @@
   },
   "show": {
     "publications": true,
-    "public": true,
+    "public": false,
     "join": true,
     "partners": false,
     "popup": true,
     "recruitBox": true,
     "gallery": false,
-    "methods": false,
     "news": true,
     "projects": false,
     "research": true,
+    "methods": false,
     "team": true,
     "lecture": true
   },
@@ -146,5 +143,8 @@
       "ko": "구조해석, 가상센싱, 구조설계 및 건전성 평가에 관심 있는 대학원 진학 희망자, 학부연구생 및 박사후연구원은 이메일로 문의해 주세요. 참여 가능 여부는 개별 안내합니다.",
       "en": "Prospective graduate students, undergraduate researchers, and postdoctoral researchers interested in structural analysis, virtual sensing, structural design, or integrity assessment are welcome to inquire by email. Availability will be confirmed individually."
     }
+  },
+  "preview": {
+    "key": "sadi-2026"
   }
 }
