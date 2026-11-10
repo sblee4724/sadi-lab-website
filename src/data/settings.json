@@ -21,9 +21,6 @@
     "body": "Noto Sans KR",
     "mono": "JetBrains Mono"
   },
-  "preview": {
-    "key": "sadi-2026"
-  },
   "theme": {
     "default": "light",
     "light": {
@@ -130,10 +127,10 @@
     "popup": true,
     "recruitBox": true,
     "gallery": false,
-    "methods": false,
     "news": true,
     "projects": false,
     "research": true,
+    "methods": false,
     "team": true,
     "lecture": true
   },
@@ -143,8 +140,11 @@
       "en": "Interested in Researching with Us?"
     },
     "body": {
-      "ko": "구조해석, 가상센싱, 구조설계 및 건전성 평가에 관심 있는 대학원 진학 희망자, 학부연구생 및 박사후연구원은 이메일로 문의해 주세요. 참여 가능 여부는 개별 안내합니다.",
-      "en": "Prospective graduate students, undergraduate researchers, and postdoctoral researchers interested in structural analysis, virtual sensing, structural design, or integrity assessment are welcome to inquire by email. Availability will be confirmed individually."
+      "ko": "구조해석, 가상센싱, 구조설계 및 건전성 평가에 관심 있는 학부연구생, 석사·박사과정 진학 희망자 및 박사후연구원은 이메일로 문의해 주세요. 참여 가능 여부는 개별 안내합니다.",
+      "en": "Undergraduate researchers, prospective M.S. and Ph.D. students, and postdoctoral researchers interested in structural analysis, virtual sensing, structural design, or integrity assessment are welcome to inquire by email. Availability will be confirmed individually."
     }
+  },
+  "preview": {
+    "key": "sadi-2026"
   }
 }

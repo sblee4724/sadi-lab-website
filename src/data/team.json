@@ -79,20 +79,20 @@
   "alumni": [],
   "openings": [
     {
-      "ko": "박사과정 · 문의",
-      "en": "Ph.D. inquiries welcome"
+      "ko": "학부연구생 · 문의",
+      "en": "Undergraduate research inquiries welcome"
     },
     {
       "ko": "석사과정 · 문의",
       "en": "M.S. inquiries welcome"
     },
     {
-      "ko": "박사후연구원 · 문의",
-      "en": "Postdoctoral inquiries welcome"
+      "ko": "박사과정 · 문의",
+      "en": "Ph.D. inquiries welcome"
     },
     {
-      "ko": "학부연구생 · 문의",
-      "en": "Undergraduate research inquiries welcome"
+      "ko": "박사후연구원 · 문의",
+      "en": "Postdoctoral inquiries welcome"
     }
   ]
 }
